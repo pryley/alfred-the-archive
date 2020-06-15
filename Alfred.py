@@ -86,10 +86,10 @@ class Items(object):
 class Tools(object):
 
     @staticmethod
-    def chop(theString, extension):
-        if theString.endswith(extension):
-            return theString[:-len(extension)]
-        return theString
+    def chop(string, suffix):
+        if string.endswith(suffix):
+            return string[:-len(suffix)]
+        return string
 
     @staticmethod
     def getArgv(i):
@@ -135,7 +135,7 @@ class Tools(object):
         sys.stderr.write('{0}\n'.format(message))
 
     @staticmethod
-    def settings(key):
+    def settings(key, fallback=str()):
         bundle_id=os.getenv('the_archive_bundle_id')
         team_id=os.getenv('the_archive_team_id')
         plist=os.path.expanduser("~/Library/Group Containers/{0}.{1}.prefs/Library/Preferences/{0}.{1}.prefs.plist".format(team_id, bundle_id))
@@ -144,10 +144,9 @@ class Tools(object):
             try:
                 return data[key]
             except KeyError:
-                sys.stderr.write(u"ERROR: Cannot get the application setting: {0}".format(key))
-                pass
-        else:
-            sys.stderr.write("ERROR: Cannot find the application settings, please verify the_archive_bundle_id.")
+                sys.stderr.write(u"Warning: Cannot get the application setting: {0} ".format(key))
+                return fallback
+        sys.stderr.write("Error: Cannot find the application settings, please verify the_archive_bundle_id.")
         sys.exit(0)
 
     @staticmethod

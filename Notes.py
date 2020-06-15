@@ -52,12 +52,12 @@ class Notes(object):
         self.search_content = True if os.getenv('search_content') == 'True' else False
         self.search_yaml_tags_only = True if os.getenv('search_yaml_tags_only') == 'True' else False
         self.template_tag = os.getenv('template_tag')
-        self.use_zettel_id = True if Tools.settings('isUsingIDForNewFiles') == 1 else False
+        self.use_zettel_id = True if Tools.settings('isUsingIDForNewFiles', 0) == 1 else False
         self.use_zettel_id_in_title = True if os.getenv('use_zettel_id_in_title') == 'True' else False
 
     @staticmethod
     def __buildNotesExtension():
-        ext = Tools.settings('fileExtension')
+        ext = Tools.settings('fileExtension', 'txt')
         if not ext:
             ext = '.md'
         return ext if '.' in ext else str().join(['.', ext])
@@ -262,8 +262,6 @@ class Search(Notes):
                 title = self.getNoteTitle(file['path'])
                 if (search_type == 'and' and self.__match(search_terms, title, 'AND')) or (search_type == 'or' and self.__match(search_terms, title, 'OR')):
                     new_list.append(file)
-                # TODO: remove 1 line when unicode test successful
-                # content = normalize('NFD', content.decode('utf-8'))
                 elif self.search_content:
                     content = self.__getFileContent(file['path'])
                     if content != str() and (search_type == 'and' and self.__match(search_terms, content, 'AND')) or (search_type == 'or' and self.__match(search_terms, content, 'OR')):

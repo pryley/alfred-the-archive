@@ -24,7 +24,7 @@ def copyFile(source, target_dir):
 def getMediaFolder():
     my_notes = Search()
     notes_path = my_notes.getNotesPath()
-    media_dir = Tools.settings('resourcesSubfolder')
+    media_dir = Tools.settings('resourcesSubfolder', 'media')
     media_path = os.path.join(notes_path, media_dir)
     if not(os.path.exists(media_path)):
         os.mkdir(media_path)
