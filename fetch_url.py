@@ -9,7 +9,7 @@ import os
 import sys
 
 search = Search()
-ext = search.getNoteExtension()
+ext = search.getDefaultExtension()
 path = search.getNotesPath()
 query = Tools.getArgv(1)
 

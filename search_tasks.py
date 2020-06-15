@@ -9,12 +9,11 @@ items = Items()
 query = Tools.getArgv(1)
 search = Search()
 
-extension = search.getNoteExtension()
 tasks = search.tasks(query)
 
 if len(tasks) > 0:
     for file in tasks:
-        file_title = file['title'] if file['title'] != str() else Tools.chop(file['filename'], extension)
+        file_title = file['title'] if file['title'] != str() else search.getNoteFilename(file['path'])
         items.setItem(
             arg = file['path'],
             subtitle = u'\u2192 {0} (Created: {1}) (\u2325 Open in The Archive)'.format(file_title.decode('utf-8'), Tools.getDateStr(file['ctime'])),

@@ -44,10 +44,11 @@ class Notes(object):
     }
 
     def __init__(self):
+        self.allowed_extensions = self.__getAllowedExtensions()
         self.default_date_format = os.getenv('default_date_format')
+        self.default_extension = self.__getDefaultExtension()
         self.exact_match = True if os.getenv('exact_match') == 'True' else False
-        self.extension = self.__buildNotesExtension()
-        self.path = self.__buildNotesPath()
+        self.path = self.__getNotesPath()
         self.prefer_filename_to_title = True if os.getenv('prefer_filename_to_title') == 'True' else False
         self.search_content = True if os.getenv('search_content') == 'True' else False
         self.search_yaml_tags_only = True if os.getenv('search_yaml_tags_only') == 'True' else False
@@ -56,26 +57,36 @@ class Notes(object):
         self.use_zettel_id_in_title = True if os.getenv('use_zettel_id_in_title') == 'True' else False
 
     @staticmethod
-    def __buildNotesExtension():
-        ext = Tools.settings('fileExtension', 'txt')
-        if not ext:
-            ext = '.md'
-        return ext if '.' in ext else str().join(['.', ext])
+    def __getAllowedExtensions():
+        extensions = Tools.settings('fileExtensions', ['md','txt'])
+        allowed_extensions = [Notes.normalizeExt(ext) for ext in extensions]
+        return tuple(allowed_extensions)
 
     @staticmethod
-    def __buildNotesPath():
+    def __getDefaultExtension():
+        ext = Tools.settings('fileExtension', 'txt')
+        return Notes.normalizeExt(ext)
+
+    @staticmethod
+    def __getNotesPath():
         archive_url = Tools.settings('archiveURL')
         path = urllib2.unquote(archive_url[len("file://"):])
         return path
 
-    def getNoteExtension(self):
-        return self.extension
+    def getAllowedExtensions(self):
+        return self.allowed_extensions
+
+    def getDefaultExtension(self):
+        return self.default_extension
 
     def getNotesPath(self):
         return self.path
 
+    @staticmethod
+    def normalizeExt(ext):
+        return ext if '.' in ext else str().join(['.', ext])
+
     def useZettelId(self):
-        Tools.log(self.use_zettel_id)
         return self.use_zettel_id
 
 class Note(Notes):
@@ -106,23 +117,23 @@ class Note(Notes):
 
     def getTargetFilePath(self, file_name):
         file_name = file_name.rstrip().lstrip()
-        file_path = os.path.join(self.path, "{0}{1}".format(file_name, self.extension))
+        file_path = os.path.join(self.path, "{0}{1}".format(file_name, self.default_extension))
         if os.path.isfile(file_path):
             # TODO: change the zettel ID instead
             new_file_name = Tools.strJoin(file_name, ' ', Tools.getTodayDate('%d-%m-%Y'))
-            file_path = os.path.join(self.path, "{0}{1}".format(new_file_name, self.extension))
+            file_path = os.path.join(self.path, "{0}{1}".format(new_file_name, self.default_extension))
         return file_path
 
-    def normalizeFilename(self, f):
+    def normalizeFilename(self, filename):
         self.CHAR_REPLACEMENT_MAP.update(self.UMLAUT_REPL_MAP)
-        return Tools.strReplace(f, self.CHAR_REPLACEMENT_MAP, lowercase=False)
+        return Tools.strReplace(filename, self.CHAR_REPLACEMENT_MAP, lowercase=False)
 
     def readTemplate(self, **kwargs):
         if '#' not in self.template_tag or self.template_tag == str():
             self.template_tag = '#template'
         if os.path.exists(self.template_path):
-            with open(self.template_path, "r") as f:
-                content = f.read()
+            with open(self.template_path, "r") as file:
+                content = file.read()
         else:
             content = self.FALLBACK_CONTENT
         content = content.replace(self.template_tag, '')
@@ -136,7 +147,7 @@ class Search(Notes):
         super(Search, self).__init__()
 
     def __getFileContent(self, file_path):
-        if str(file_path).endswith(self.extension):
+        if str(file_path).endswith(self.allowed_extensions):
             with open(file_path, 'r') as c:
                 content = c.read()
         else:
@@ -196,21 +207,23 @@ class Search(Notes):
             pass
         if err == 0:
             seq = list()
-            for f in file_list:
-                f_path = os.path.join(self.path, f)
-                not (f.startswith('.')) and f.endswith(self.extension) and seq.append({
-                    'filename': f,
-                    'path': f_path,
-                    'title': self.getNoteTitle(f_path),
-                    'ctime': self.getFileMeta(f_path, 'ctime'),
-                    'mtime': self.getFileMeta(f_path, 'mtime'),
-                    'size': self.getFileMeta(f_path, 'size')
+            for filename in file_list:
+                file_path = os.path.join(self.path, filename)
+                not (filename.startswith('.')) and filename.endswith(self.allowed_extensions) and seq.append({
+                    'filename': filename,
+                    'path': file_path,
+                    'title': self.getNoteTitle(file_path),
+                    'ctime': self.getFileMeta(file_path, 'ctime'),
+                    'mtime': self.getFileMeta(file_path, 'mtime'),
+                    'size': self.getFileMeta(file_path, 'size')
                 })
             sorted_file_list = sorted(seq, key=lambda k: k['mtime'], reverse=reverse)
             return sorted_file_list
 
-    def getNoteFilename(self, path):
-        return Tools.chop(os.path.basename(path), self.extension)
+    def getNoteFilename(self, file_path):
+        file_basename = os.path.basename(file_path)
+        filename_without_extension = file_basename.split('.')[0]
+        return filename_without_extension
 
     def getNoteTitle(self, path):
         content = self.__getFileContent(path)
