@@ -44,6 +44,19 @@
 				<false/>
 			</dict>
 		</array>
+		<key>0F5540E1-5999-4328-9C24-3C9E18E2746D</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>B98A4504-559E-41C1-9AA8-4D54781C00B8</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
 		<key>0F836984-A230-4C9E-A376-2A6F54239A8D</key>
 		<array>
 			<dict>
@@ -850,6 +863,42 @@
 			<string>8C6B9363-12F2-4E71-8CE7-D1D9777F05C3</string>
 			<key>version</key>
 			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>keyword</key>
+				<string>arhelp</string>
+				<key>subtext</key>
+				<string></string>
+				<key>text</key>
+				<string>Read the doumentation</string>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>0F5540E1-5999-4328-9C24-3C9E18E2746D</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>openwith</key>
+				<string></string>
+				<key>sourcefile</key>
+				<string>README.md</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.openfile</string>
+			<key>uid</key>
+			<string>B98A4504-559E-41C1-9AA8-4D54781C00B8</string>
+			<key>version</key>
+			<integer>3</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -2393,14 +2442,23 @@ end alfred_script</string>
 			<key>xpos</key>
 			<integer>1010</integer>
 			<key>ypos</key>
-			<integer>1210</integer>
+			<integer>1360</integer>
 		</dict>
 		<key>0BC841DD-23D7-4621-BB77-3C6851C20031</key>
 		<dict>
 			<key>xpos</key>
 			<integer>1150</integer>
 			<key>ypos</key>
-			<integer>190</integer>
+			<integer>340</integer>
+		</dict>
+		<key>0F5540E1-5999-4328-9C24-3C9E18E2746D</key>
+		<dict>
+			<key>note</key>
+			<string>Open README.md</string>
+			<key>xpos</key>
+			<integer>610</integer>
+			<key>ypos</key>
+			<integer>160</integer>
 		</dict>
 		<key>0F836984-A230-4C9E-A376-2A6F54239A8D</key>
 		<dict>
@@ -2409,14 +2467,14 @@ end alfred_script</string>
 			<key>xpos</key>
 			<integer>10</integer>
 			<key>ypos</key>
-			<integer>460</integer>
+			<integer>610</integer>
 		</dict>
 		<key>1AD1E2CF-FCB9-45E5-B8F2-9C6B0CEAABD6</key>
 		<dict>
 			<key>xpos</key>
 			<integer>1610</integer>
 			<key>ypos</key>
-			<integer>1510</integer>
+			<integer>1660</integer>
 		</dict>
 		<key>22568BCE-A99B-499A-B22B-D125B36C3A97</key>
 		<dict>
@@ -2425,7 +2483,7 @@ end alfred_script</string>
 			<key>xpos</key>
 			<integer>1010</integer>
 			<key>ypos</key>
-			<integer>610</integer>
+			<integer>760</integer>
 		</dict>
 		<key>3078B7FC-DAD0-48C1-938B-E2C5102800D8</key>
 		<dict>
@@ -2434,7 +2492,7 @@ end alfred_script</string>
 			<key>xpos</key>
 			<integer>210</integer>
 			<key>ypos</key>
-			<integer>610</integer>
+			<integer>760</integer>
 		</dict>
 		<key>35224C2A-BA32-4CA1-8769-35B3B7F1D1C2</key>
 		<dict>
@@ -2445,14 +2503,14 @@ end alfred_script</string>
 			<key>xpos</key>
 			<integer>1010</integer>
 			<key>ypos</key>
-			<integer>1510</integer>
+			<integer>1660</integer>
 		</dict>
 		<key>3666E55C-5EA1-4C6A-9565-22A55CE17403</key>
 		<dict>
 			<key>xpos</key>
 			<integer>1210</integer>
 			<key>ypos</key>
-			<integer>1540</integer>
+			<integer>1690</integer>
 		</dict>
 		<key>42489888-94A8-4578-A4CB-BCAE3F2D7339</key>
 		<dict>
@@ -2461,14 +2519,16 @@ end alfred_script</string>
 			<key>xpos</key>
 			<integer>2010</integer>
 			<key>ypos</key>
-			<integer>1660</integer>
+			<integer>1810</integer>
 		</dict>
 		<key>42848B7A-9D43-4C79-9E97-A8990FACBAE7</key>
 		<dict>
+			<key>note</key>
+			<string>Import image</string>
 			<key>xpos</key>
 			<integer>1010</integer>
 			<key>ypos</key>
-			<integer>1060</integer>
+			<integer>1210</integer>
 		</dict>
 		<key>47A8B5B3-11A9-4177-A3DA-18CDE6C4F71D</key>
 		<dict>
@@ -2477,7 +2537,7 @@ end alfred_script</string>
 			<key>xpos</key>
 			<integer>210</integer>
 			<key>ypos</key>
-			<integer>1210</integer>
+			<integer>1360</integer>
 		</dict>
 		<key>524CFE69-2161-4618-BC65-7D380B0B3EAD</key>
 		<dict>
@@ -2486,21 +2546,21 @@ end alfred_script</string>
 			<key>xpos</key>
 			<integer>610</integer>
 			<key>ypos</key>
-			<integer>760</integer>
+			<integer>910</integer>
 		</dict>
 		<key>5679BD15-58A7-4FCF-9737-E6B573CE4779</key>
 		<dict>
 			<key>xpos</key>
 			<integer>810</integer>
 			<key>ypos</key>
-			<integer>195</integer>
+			<integer>345</integer>
 		</dict>
 		<key>59FC67F4-40A5-440E-B854-0B65823BD164</key>
 		<dict>
 			<key>xpos</key>
 			<integer>2410</integer>
 			<key>ypos</key>
-			<integer>1510</integer>
+			<integer>1660</integer>
 		</dict>
 		<key>629E7681-4B3B-44F8-931C-617775EE6CFA</key>
 		<dict>
@@ -2509,21 +2569,21 @@ end alfred_script</string>
 			<key>xpos</key>
 			<integer>610</integer>
 			<key>ypos</key>
-			<integer>1210</integer>
+			<integer>1360</integer>
 		</dict>
 		<key>657FD06E-6635-4C54-88C2-8FF658370FD7</key>
 		<dict>
 			<key>xpos</key>
 			<integer>1360</integer>
 			<key>ypos</key>
-			<integer>1510</integer>
+			<integer>1660</integer>
 		</dict>
 		<key>699C78CF-86C9-47FA-A077-DB7462FDE43F</key>
 		<dict>
 			<key>xpos</key>
 			<integer>350</integer>
 			<key>ypos</key>
-			<integer>490</integer>
+			<integer>640</integer>
 		</dict>
 		<key>6B5486CD-8FE6-493A-AB5E-DC1E63F6979F</key>
 		<dict>
@@ -2532,7 +2592,7 @@ end alfred_script</string>
 			<key>xpos</key>
 			<integer>1010</integer>
 			<key>ypos</key>
-			<integer>310</integer>
+			<integer>460</integer>
 		</dict>
 		<key>724B20C2-2A71-4470-AA68-E9B53C3E089D</key>
 		<dict>
@@ -2541,7 +2601,7 @@ end alfred_script</string>
 			<key>xpos</key>
 			<integer>10</integer>
 			<key>ypos</key>
-			<integer>160</integer>
+			<integer>310</integer>
 		</dict>
 		<key>8A5F7A4E-FC3A-466E-A53A-38313E9F8022</key>
 		<dict>
@@ -2550,7 +2610,7 @@ end alfred_script</string>
 			<key>xpos</key>
 			<integer>2210</integer>
 			<key>ypos</key>
-			<integer>760</integer>
+			<integer>910</integer>
 		</dict>
 		<key>8C6B9363-12F2-4E71-8CE7-D1D9777F05C3</key>
 		<dict>
@@ -2568,14 +2628,14 @@ end alfred_script</string>
 			<key>xpos</key>
 			<integer>210</integer>
 			<key>ypos</key>
-			<integer>760</integer>
+			<integer>910</integer>
 		</dict>
 		<key>97B0EE32-A8A1-405E-B0F2-C459AC7FC3E3</key>
 		<dict>
 			<key>xpos</key>
 			<integer>1610</integer>
 			<key>ypos</key>
-			<integer>340</integer>
+			<integer>490</integer>
 		</dict>
 		<key>9C2A4DF6-ECF8-45B0-9980-FBE6B1DE2739</key>
 		<dict>
@@ -2584,7 +2644,7 @@ end alfred_script</string>
 			<key>xpos</key>
 			<integer>1010</integer>
 			<key>ypos</key>
-			<integer>160</integer>
+			<integer>310</integer>
 		</dict>
 		<key>A145A5D1-90C7-4FEC-B0F3-8FFE5F6B10D4</key>
 		<dict>
@@ -2593,7 +2653,7 @@ end alfred_script</string>
 			<key>xpos</key>
 			<integer>610</integer>
 			<key>ypos</key>
-			<integer>310</integer>
+			<integer>460</integer>
 		</dict>
 		<key>A2D9130D-E0ED-4A2F-9D37-4EE26F2B16F9</key>
 		<dict>
@@ -2602,14 +2662,14 @@ end alfred_script</string>
 			<key>xpos</key>
 			<integer>610</integer>
 			<key>ypos</key>
-			<integer>610</integer>
+			<integer>760</integer>
 		</dict>
 		<key>A4A95B3D-BE6A-45BC-A53B-74984F4F48A7</key>
 		<dict>
 			<key>xpos</key>
 			<integer>1810</integer>
 			<key>ypos</key>
-			<integer>1515</integer>
+			<integer>1665</integer>
 		</dict>
 		<key>A73C0944-0E7B-483F-BC14-1A0089887B05</key>
 		<dict>
@@ -2618,7 +2678,7 @@ end alfred_script</string>
 			<key>xpos</key>
 			<integer>1010</integer>
 			<key>ypos</key>
-			<integer>1360</integer>
+			<integer>1510</integer>
 		</dict>
 		<key>A8B79535-E3CC-4A12-B1A0-CBE9634E5804</key>
 		<dict>
@@ -2627,7 +2687,7 @@ end alfred_script</string>
 			<key>xpos</key>
 			<integer>810</integer>
 			<key>ypos</key>
-			<integer>460</integer>
+			<integer>610</integer>
 		</dict>
 		<key>ABB1A2DA-ECDB-4ECF-AAAE-EACF4246706D</key>
 		<dict>
@@ -2636,14 +2696,14 @@ end alfred_script</string>
 			<key>xpos</key>
 			<integer>10</integer>
 			<key>ypos</key>
-			<integer>310</integer>
+			<integer>460</integer>
 		</dict>
 		<key>B45C99C4-5814-48E9-A8C4-426F939F7335</key>
 		<dict>
 			<key>xpos</key>
 			<integer>1810</integer>
 			<key>ypos</key>
-			<integer>1565</integer>
+			<integer>1715</integer>
 		</dict>
 		<key>B58A48B9-E9D2-46BA-B2FC-8D52D0002AFD</key>
 		<dict>
@@ -2652,24 +2712,35 @@ end alfred_script</string>
 			<key>xpos</key>
 			<integer>10</integer>
 			<key>ypos</key>
-			<integer>760</integer>
+			<integer>910</integer>
 		</dict>
 		<key>B6D96F39-3BF6-4663-BF58-33CD36A2433D</key>
 		<dict>
 			<key>xpos</key>
 			<integer>2410</integer>
 			<key>ypos</key>
-			<integer>310</integer>
+			<integer>460</integer>
 		</dict>
 		<key>B78F0AC4-5704-4E41-A5C5-41D7EF829577</key>
 		<dict>
 			<key>xpos</key>
 			<integer>810</integer>
 			<key>ypos</key>
-			<integer>1020</integer>
+			<integer>1170</integer>
+		</dict>
+		<key>B98A4504-559E-41C1-9AA8-4D54781C00B8</key>
+		<dict>
+			<key>note</key>
+			<string>Open documentation</string>
+			<key>xpos</key>
+			<integer>2210</integer>
+			<key>ypos</key>
+			<integer>160</integer>
 		</dict>
 		<key>BC34D5F9-85CA-4E33-A951-941FE061EEE8</key>
 		<dict>
+			<key>note</key>
+			<string>Open donate URL</string>
 			<key>xpos</key>
 			<integer>2210</integer>
 			<key>ypos</key>
@@ -2682,7 +2753,7 @@ end alfred_script</string>
 			<key>xpos</key>
 			<integer>10</integer>
 			<key>ypos</key>
-			<integer>910</integer>
+			<integer>1060</integer>
 		</dict>
 		<key>C60A62FF-9B59-4C3C-99F3-807373F2125E</key>
 		<dict>
@@ -2691,28 +2762,30 @@ end alfred_script</string>
 			<key>xpos</key>
 			<integer>2210</integer>
 			<key>ypos</key>
-			<integer>910</integer>
+			<integer>1060</integer>
 		</dict>
 		<key>C767AF6B-DF2C-40A1-8F23-916EDE028F7F</key>
 		<dict>
 			<key>xpos</key>
 			<integer>1265</integer>
 			<key>ypos</key>
-			<integer>1540</integer>
+			<integer>1690</integer>
 		</dict>
 		<key>C813B26C-8583-4087-9E6E-1FAC323A7F0F</key>
 		<dict>
+			<key>note</key>
+			<string>Delete note</string>
 			<key>xpos</key>
 			<integer>2210</integer>
 			<key>ypos</key>
-			<integer>1510</integer>
+			<integer>1660</integer>
 		</dict>
 		<key>C9B46D25-C13C-4CBC-A087-787CB09B06E5</key>
 		<dict>
 			<key>xpos</key>
 			<integer>2410</integer>
 			<key>ypos</key>
-			<integer>160</integer>
+			<integer>310</integer>
 		</dict>
 		<key>CB491715-463C-4A1F-BF00-4EF95002AF65</key>
 		<dict>
@@ -2721,14 +2794,14 @@ end alfred_script</string>
 			<key>xpos</key>
 			<integer>610</integer>
 			<key>ypos</key>
-			<integer>910</integer>
+			<integer>1060</integer>
 		</dict>
 		<key>CCFB27EC-FE2A-4853-92F9-66D2E16EC154</key>
 		<dict>
 			<key>xpos</key>
 			<integer>750</integer>
 			<key>ypos</key>
-			<integer>640</integer>
+			<integer>790</integer>
 		</dict>
 		<key>CE0C3E3D-3480-4860-8AEF-D91987553D48</key>
 		<dict>
@@ -2737,21 +2810,21 @@ end alfred_script</string>
 			<key>xpos</key>
 			<integer>1210</integer>
 			<key>ypos</key>
-			<integer>910</integer>
+			<integer>1060</integer>
 		</dict>
 		<key>D0A0BB4A-D8DC-4463-A00F-06ABF17CF7F3</key>
 		<dict>
 			<key>xpos</key>
 			<integer>1810</integer>
 			<key>ypos</key>
-			<integer>1615</integer>
+			<integer>1765</integer>
 		</dict>
 		<key>D0E510A1-8928-4339-A865-18534BEB6E01</key>
 		<dict>
 			<key>xpos</key>
 			<integer>2410</integer>
 			<key>ypos</key>
-			<integer>1360</integer>
+			<integer>1510</integer>
 		</dict>
 		<key>D276EC74-1F27-4BA5-97A8-A4E9D1020D2A</key>
 		<dict>
@@ -2760,21 +2833,21 @@ end alfred_script</string>
 			<key>xpos</key>
 			<integer>1010</integer>
 			<key>ypos</key>
-			<integer>460</integer>
+			<integer>610</integer>
 		</dict>
 		<key>D2AD3BCE-73FA-4344-B003-A57E66E4AC6B</key>
 		<dict>
 			<key>xpos</key>
 			<integer>1810</integer>
 			<key>ypos</key>
-			<integer>1465</integer>
+			<integer>1615</integer>
 		</dict>
 		<key>D4A81EE0-15F4-4F07-B5B6-FD9E7646EB3A</key>
 		<dict>
 			<key>xpos</key>
 			<integer>805</integer>
 			<key>ypos</key>
-			<integer>640</integer>
+			<integer>790</integer>
 		</dict>
 		<key>D6A73E77-7D81-45B7-AC0B-B6E59D5B94DD</key>
 		<dict>
@@ -2783,14 +2856,14 @@ end alfred_script</string>
 			<key>xpos</key>
 			<integer>1010</integer>
 			<key>ypos</key>
-			<integer>760</integer>
+			<integer>910</integer>
 		</dict>
 		<key>D7113CA2-175F-4D98-B738-A732E4826D02</key>
 		<dict>
 			<key>xpos</key>
 			<integer>410</integer>
 			<key>ypos</key>
-			<integer>1060</integer>
+			<integer>1210</integer>
 		</dict>
 		<key>D7F05A73-355B-4C77-A4F8-F301CF68FB9A</key>
 		<dict>
@@ -2799,14 +2872,14 @@ end alfred_script</string>
 			<key>xpos</key>
 			<integer>2210</integer>
 			<key>ypos</key>
-			<integer>1210</integer>
+			<integer>1360</integer>
 		</dict>
 		<key>DBE958B2-368A-48F9-A8AB-1DC9FC300B27</key>
 		<dict>
 			<key>xpos</key>
 			<integer>1500</integer>
 			<key>ypos</key>
-			<integer>1540</integer>
+			<integer>1690</integer>
 		</dict>
 		<key>DE1B8FAF-256C-4AD9-BE4E-9EBCFB71C52D</key>
 		<dict>
@@ -2815,7 +2888,7 @@ end alfred_script</string>
 			<key>xpos</key>
 			<integer>610</integer>
 			<key>ypos</key>
-			<integer>160</integer>
+			<integer>310</integer>
 		</dict>
 		<key>E0CED2B6-51DD-4178-B6BF-5FC59F6EE725</key>
 		<dict>
@@ -2824,7 +2897,7 @@ end alfred_script</string>
 			<key>xpos</key>
 			<integer>210</integer>
 			<key>ypos</key>
-			<integer>460</integer>
+			<integer>610</integer>
 		</dict>
 		<key>E83305CB-1BAA-457E-93A8-0B9C7689D3C7</key>
 		<dict>
@@ -2833,14 +2906,14 @@ end alfred_script</string>
 			<key>xpos</key>
 			<integer>10</integer>
 			<key>ypos</key>
-			<integer>1210</integer>
+			<integer>1360</integer>
 		</dict>
 		<key>EB8A1BFE-4152-4203-A6B8-DAA827BA4932</key>
 		<dict>
 			<key>xpos</key>
 			<integer>1810</integer>
 			<key>ypos</key>
-			<integer>1665</integer>
+			<integer>1815</integer>
 		</dict>
 		<key>ED18F18E-3DB7-4B1D-A7A3-17DE6EBFA83B</key>
 		<dict>
@@ -2849,14 +2922,14 @@ end alfred_script</string>
 			<key>xpos</key>
 			<integer>610</integer>
 			<key>ypos</key>
-			<integer>460</integer>
+			<integer>610</integer>
 		</dict>
 		<key>EF0769B1-0BDA-4D96-B640-1FA8EB1FD7BB</key>
 		<dict>
 			<key>xpos</key>
 			<integer>1150</integer>
 			<key>ypos</key>
-			<integer>490</integer>
+			<integer>640</integer>
 		</dict>
 		<key>F2AF7DA9-9371-485E-B037-DF138D6379C1</key>
 		<dict>
@@ -2865,7 +2938,7 @@ end alfred_script</string>
 			<key>xpos</key>
 			<integer>10</integer>
 			<key>ypos</key>
-			<integer>610</integer>
+			<integer>760</integer>
 		</dict>
 		<key>FA40A7DB-25B4-464C-B269-EC046612AD60</key>
 		<dict>
@@ -2874,7 +2947,7 @@ end alfred_script</string>
 			<key>xpos</key>
 			<integer>2210</integer>
 			<key>ypos</key>
-			<integer>1360</integer>
+			<integer>1510</integer>
 		</dict>
 		<key>FD181211-B1A6-463B-AF31-28A941B28F2E</key>
 		<dict>
@@ -2883,7 +2956,7 @@ end alfred_script</string>
 			<key>xpos</key>
 			<integer>1210</integer>
 			<key>ypos</key>
-			<integer>610</integer>
+			<integer>760</integer>
 		</dict>
 	</dict>
 	<key>variables</key>
@@ -2909,8 +2982,10 @@ end alfred_script</string>
 		<key>use_zettel_id_in_title</key>
 		<string>False</string>
 	</dict>
+	<key>variablesdontexport</key>
+	<array/>
 	<key>version</key>
-	<string>1.2.0</string>
+	<string>1.3.0</string>
 	<key>webaddress</key>
 	<string>https://github.com/pryley/alfred-the-archive</string>
 </dict>

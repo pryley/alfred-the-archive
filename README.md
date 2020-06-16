@@ -14,14 +14,23 @@ This is an comprehensive workflow for The Archive that helps you work with your 
 - [Importing URLs](#importing-urls)
 - [Importing Images](#importing-images)
 - [Configuration](#configuration)
+- [Documentation](#documentation)
+- [Changelog](#changelog)
 - [Credits](credits)
 
 ## Installation
 
-1. Download [the latest release](https://github.com/pryley/alfred-the-archive/releases/latest)
+1. Download [the latest release](https://github.com/pryley/alfred-the-archive/releases/latest/download/The.Archive.alfredworkflow)
 2. Double-click the downloaded workflow to install in Alfred.
-3. Install [QLMarkdownGFM](https://github.com/Watson1978/QLMarkdownGFM) (optional)
-4. Install [pandoc](#importing-urls) (optional)
+3. Install [QLMarkdownGFM](https://github.com/Watson1978/QLMarkdownGFM) with [Homebrew](https://brew.sh/) (optional, this allows you to Quickview markdown files)
+    ```bash
+    brew cask install https://raw.githubusercontent.com/Watson1978/QLMarkdownGFM/master/qlmarkdown-gfm.rb
+    xattr -d -r com.apple.quarantine ~/Library/QuickLook/
+    ```
+4. Install [pandoc](https://pandoc.org/) with [Homebrew](https://brew.sh/) (optional, this allows you to import a webpage into a note)
+    ```bash
+    brew install pandoc
+    ```
 
 ## Searching Notes
 
@@ -29,7 +38,7 @@ To search your notes, type `ar` along with a space, then enter your search query
 
 ![](.screenshots/ar.png)
 
->  **Tip:** You may change the `exact_match` and `search_contents` options  to configure how the workflow searches The Archive.
+> **Tip:** You may change the [exact_match](#exact-match-exact_match) and [search_content](#search-content-search_content) options to configure how the workflow searches The Archive.
 
 ### Modifier keys
 
@@ -37,17 +46,13 @@ There are three modifier keys that you can use with the search results:
 
 1. **⇧ Shift:** Pressing this key will use Quicklook to preview the selected note.
 
-   >  **Note:** To view markdown files with Quicklook, you may need to install a Quicklook extension. You can do this with [Homebrew](https://brew.sh/).
-   >
-   > ```bash
-   > brew cask install https://raw.githubusercontent.com/Watson1978/QLMarkdownGFM/master/qlmarkdown-gfm.rb
-   > ```
+   > **Note:** To view markdown files with Quicklook, you may need to [install a Quicklook extension](#installation).
 
 2. **⌥ Option:** Holding this key down as you press Enter will paste a wiki link of the selected note into the frontmost application (i.e. `[[title of the selected note]]`).
 
 3. **⌘ Command:** Holding this key down as you press Enter will display the following "Actions" menu:
 
-   ![](.screenshots/ar_actions_menu.png)
+   ![](.screenshots/ar_action_menu.png)
 
 ## Searching Tasks
 
@@ -68,15 +73,15 @@ There are two modifier keys that you can use with tasks:
 
 1. **⌥ Option:** Holding this key down as you press Enter will open the note containing the task in the default editor.
 
-2. **⌘ Command:** Holding this key down as you press Enter will open the noted containing the task in "The Archive".
+2. **⌘ Command:** Holding this key down as you press Enter will open the noted containing the task in The Archive.
 
 ## Searching Tags
 
-To search the tags in your notes, type `artag` along with a space, then enter your search query. Pressing Enter on a tag will match all notes that contain the tag in "The Archive".
+To search the tags in your notes, type `artag` along with a space, then enter your search query. Pressing Enter on a tag will match all notes that contain the tag in The Archive.
 
 ![](.screenshots/artag.png)
 
-> **Note:** Due to a limitation of the external link URL scheme that "The Archive" uses, it is not possible to pass the `#` symbol along with the tag name to "The Archive".
+> **Note:** Due to a limitation of the external link URL scheme that The Archive uses, it is not possible to pass the `#` symbol along with the tag name to The Archive.
 
 ### Modifier keys
 
@@ -86,13 +91,13 @@ There is one modifier key that you can use with tags:
 
 ## Random Notes
 
-To display a random note in "The Archive", type `arrandom` and press Enter.
+To display a random note in The Archive, type `arrandom` and press Enter.
 
 ![](.screenshots/arrandom.png)
 
 ## Creating Notes
 
-To create a note, type `arnew` along with a space, then enter the title of the note and optionally some tags. If you use a template, the title you enter will fill the {title} placeholder, and any tags you enter will fill the {tags} placeholder.
+To create a note, type `arnew` along with a space, then enter the title of the note and optionally some tags. If you use a template, the title you enter will fill the `{title}` placeholder, and any tags you enter will fill the `{tags}` placeholder.
 
 ![](.screenshots/arnew.png)
 
@@ -102,23 +107,27 @@ There are two modifier keys (and one modifier key combo) that you can use when c
 
 1. **⌥ Option:** Holding this key down as you press Enter will paste the current clipboard contents into the note below the title and tags.
 
-2. **⌘ Command:** Holding this key down as you press Enter will either remove or add the Zettel ID to the note depending on whether or not you have enabled the "Use ID for empty file names" option in the preferences of the "The Archive" application.
+2. **⌘ Command:** Holding this key down as you press Enter will either remove or add the Zettel ID to the note depending on whether or not you have enabled the "Use ID for empty file names" option in The Archive preferences.
 
-3. **⌘ Command + ⌥ Option:** Holding these two keys down as you press Enter will both paste the current clipboard contents into the template's `{content}` placeholder, and remove or add the Zettel ID to the note depending on whether or not you have enabled the "Use ID for empty file names" option in the preferences of the "The Archive" application.
+3. **⌘ Command + ⌥ Option:** Holding these two keys down as you press Enter will both paste the current clipboard contents into the template's `{content}` placeholder, and remove or add the Zettel ID to the note depending on whether or not you have enabled the "Use ID for empty file names" option in The Archive preferences.
 
 ## Templates
 
-To use a template, create a note in "The Archive" and tag the beginning of the note with `#template` (you can change the tag used for templates in the [workflow config](#configuration)).
+Templates are simply notes in The Archive that are tagged with `#template`. To create a note using a template, type `arnew` along with a space, enter the title of the note and optionally some tags, and then select the template that you wish to use.
+
+![](.screenshots/arnew_templates.png)
 
 > **Note:** The template tag must be used within the first 10 lines of the note else it will not be recognised as a template.
 
+> **Tip:** You may change the [template_tag](#template-tag-template_tag) option to set a custom template tag.
+
 You may use the following placeholders in your templates:
 
-- `{title}` This is the title of your note
-- `{zettel_id}` This is the Zettel ID of the note (if used)
-- `{tags}` These are the tags (if provided)
-- `{date}` This is the formatted date (change the default date format in the config) 
-- `{content}` This is the contents of the clipboard (if you have selected to paste it)
+- `{content}` This is the content of the clipboard if you have selected to paste it.
+- `{date}` This is the formatted today date.
+- `{tags}` These are the tags if provided.
+- `{title}` This is the title of your note.
+- `{zettel_id}` This is the Zettel ID of the note if used.
 
 Here is an example Template:
 
@@ -132,7 +141,7 @@ Keywords: #support {tags} #template
 {content}
 ```
 
-> **Tip:** You may change the `use_zettel_id_in_title` option  to configure whether or not the `{title}` placeholder contains the Zettel ID. To change the datetime format used in the `{date}` placeholder, change the `default_date_format` option.
+> **Tip:** You may change the [use_zettel_id_in_title](#use-zettel-id-in-title-use_zettel_id_in_title) option to configure whether or not the `{title}` placeholder contains the Zettel ID. To change the datetime format used in the `{date}` placeholder, change the [default_date_format](#default-date-format-default_date_format) option.
 
 ### Modifier keys
 
@@ -140,18 +149,12 @@ There are three modifier keys (and one modifier key combo) that you can use with
 
 1. **⇧ Shift:** Pressing this key will use Quicklook to preview the selected template.
 
-   >  **Note:** To view markdown files with Quicklook, you may need to install a Quicklook extension. You can do this with [Homebrew](https://brew.sh/).
-   >
-   > ```bash
-   > brew cask install https://raw.githubusercontent.com/Watson1978/QLMarkdownGFM/master/qlmarkdown-gfm.rb
-   > ```
+   > **Note:** To view markdown files with Quicklook, you may need to [install a Quicklook extension](#installation).
 
 2. **⌥ Option:** Holding this key down as you press Enter will paste the current clipboard contents into the template's `{content}` placeholder.
 
-3. **⌘ Command:** Holding this key down as you press Enter will either remove or add the Zettel ID to the note depending on whether or not you have enabled the "Use ID for empty file names" option in the preferences of the "The Archive" application.
-4. **⌘ Command + ⌥ Option:** Holding these two keys down as you press Enter will both paste the current clipboard contents into the template's `{content}` placeholder, and remove or add the Zettel ID to the note depending on whether or not you have enabled the "Use ID for empty file names" option in the preferences of the "The Archive" application.
-
-![](.screenshots/arnew_templates.png)
+3. **⌘ Command:** Holding this key down as you press Enter will either remove or add the Zettel ID to the note depending on whether or not you have enabled the "Use ID for empty file names" option in The Archive preferences.
+4. **⌘ Command + ⌥ Option:** Holding these two keys down as you press Enter will both paste the current clipboard contents into the template's `{content}` placeholder, and remove or add the Zettel ID to the note depending on whether or not you have enabled the "Use ID for empty file names" option in The Archive preferences.
 
 ## Importing URLs
 
@@ -159,13 +162,7 @@ To import the page content of a webpage into a note, type `arurl` along with a s
 
 ![](.screenshots/arurl.png)
 
-> **Note:** This action requires that you have [pandoc](https://pandoc.org/) installed on your mac. Pandoc is a universal document converter and is what is used to convert the HTML of the webpage to Github-flavoured markdown. If you do not have pandoc installed, then only the URL will be copied into the note.
->
-> You can install pandoc with [Homebrew](https://brew.sh/): 
->
-> ```bash
-> brew install pandoc
-> ```
+> **Note:** This action requires that you have [pandoc installed on your mac](#installation). Pandoc is a universal document converter and is used to convert the HTML of a webpage to Github-flavoured markdown. If you do not have pandoc installed, then only the URL will be copied into the note.
 
 ## Importing Images
 
@@ -186,15 +183,11 @@ To change the configuration of the workflow, type `arconfig` in Alfred. You can 
 
 ![](.screenshots/arconfig.png)
 
->  **Note:** To view markdown files with Quicklook, you may need to install a Quicklook extension. You can do this with [Homebrew](https://brew.sh/).
->
-> ```bash
-> brew cask install https://raw.githubusercontent.com/Watson1978/QLMarkdownGFM/master/qlmarkdown-gfm.rb
-> ```
+> **Note:** To view markdown files with Quicklook, you may need to [install a Quicklook extension](#installation). You can do this with [Homebrew](https://brew.sh/).
 
 ### Default Date Format (`default_date_format`)
 
->  Default value:  `%d.%m.%Y %H.%M`
+> Default value: `%d.%m.%Y %H.%M`
 
 This option defines the datetime format used for the `{date}` placeholder in your templates. 
 
@@ -222,11 +215,11 @@ When set to `False`, searching for `Books` will match `Books` as well as `Bookst
 
 > Default value: `False`
 
-This option define what is value used when matching a search result in "The Archive" (i.e. `thearchive://match/{value}`).
+This option define what is value used when matching a search result in The Archive (i.e. `thearchive://match/{value}`).
 
 When set to `True`, the note filename will be used.
 
-When set to `False`, the note title (in the form of  `# Note Title`) will be used (if one exists) instead of the filename.
+When set to `False`, the note title (in the form of `# Note Title`) will be used (if one exists) instead of the filename.
 
 ### Search Content (`search_content`)
 
@@ -256,7 +249,7 @@ The template tag defines which notes are used as templates. Add the template tag
 
 A bundle ID (or bundle identifier) uniquely identifies an application in Apple's ecosystem. This means that no two applications can have the same bundle identifier. 
 
-This workflow uses the bundle identifier together with `the_archive_team_id` to get the saved preferences of "The Archive".
+This workflow uses the bundle identifier together with [the_archive_team_id](#the-archive-team-id-the_archive_team_id) to get the saved preferences of The Archive.
 
 This value should never need changing.
 
@@ -266,7 +259,7 @@ This value should never need changing.
 
 A team ID (or team identifier) is generated by Apple and uniquely identifies the developer of an application in Apple's ecosystem.
 
-This workflow uses the team identifier together with `the_archive_bundle_id` to get the saved preferences of "The Archive".
+This workflow uses the team identifier together with [the_archive_bundle_id](#the-archive-bundle-id-the_archive_bundle_id) to get the saved preferences of The Archive.
 
 This value should never need changing.
 
@@ -277,6 +270,16 @@ This value should never need changing.
 When set to `True`, the Zettel ID will be included in the `{title}` placeholder of your templates. 
 
 When set to `False`, the Zettel ID will not be included in the `{title}` placeholder of your templates.
+
+## Documentation
+
+You may view this README.md file at any time by typing `arhelp` in Alfred.
+
+![](.screenshots/arhelp.png)
+
+## Changelog
+
+See: [Releases](https://github.com/pryley/alfred-the-archive/releases)
 
 ## Credits
 
