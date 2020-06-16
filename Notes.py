@@ -249,7 +249,7 @@ class Search(Notes):
     def isNoteTagged(self, file_path, tag):
         match = False
         with open(file_path, 'r') as c:
-            lines = c.readlines()[0:5]
+            lines = c.readlines()[0:10]
         for l in lines:
             match_obj = re.search(tag, l, re.IGNORECASE)
             if match_obj:
