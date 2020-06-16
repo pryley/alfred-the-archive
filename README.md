@@ -73,7 +73,7 @@ There are two modifier keys that you can use with tasks:
 
 1. **⌥ Option:** Holding this key down as you press Enter will open the note containing the task in the default editor.
 
-2. **⌘ Command:** Holding this key down as you press Enter will open the noted containing the task in The Archive.
+2. **⌘ Command:** Holding this key down as you press Enter will open the note containing the task in The Archive.
 
 ## Searching Tags
 
@@ -105,11 +105,11 @@ To create a note, type `arnew` along with a space, then enter the title of the n
 
 There are two modifier keys (and one modifier key combo) that you can use when creating a note without a template:
 
-1. **⌥ Option:** Holding this key down as you press Enter will paste the current clipboard contents into the note below the title and tags.
+1. **⌥ Option:** Holding this key down as you press Enter will paste the current clipboard contents into the note below the tags.
 
 2. **⌘ Command:** Holding this key down as you press Enter will either remove or add the Zettel ID to the note depending on whether or not you have enabled the "Use ID for empty file names" option in The Archive preferences.
 
-3. **⌘ Command + ⌥ Option:** Holding these two keys down as you press Enter will both paste the current clipboard contents into the template's `{content}` placeholder, and remove or add the Zettel ID to the note depending on whether or not you have enabled the "Use ID for empty file names" option in The Archive preferences.
+3. **⌘ Command + ⌥ Option:** Holding these two keys down as you press Enter will both paste the current clipboard contents into the note below the tags, and remove or add the Zettel ID to the note depending on whether or not you have enabled the "Use ID for empty file names" option in The Archive preferences.
 
 ## Templates
 
@@ -219,7 +219,7 @@ This option define what is value used when matching a search result in The Archi
 
 When set to `True`, the note filename will be used.
 
-When set to `False`, the note title (in the form of `# Note Title`) will be used (if one exists) instead of the filename.
+When set to `False`, the note title (if entered as `# Note Title`) will be used if it exists instead of the filename.
 
 ### Search Content (`search_content`)
 
@@ -241,7 +241,7 @@ When set to `False`, tags will be searched for in the entire note.
 
 > Default value: `#template`
 
-The template tag defines which notes are used as templates. Add the template tag in the first 5 lines of a note and it will be recognized as an available template when you create a note.
+The template tag defines which notes are used as templates. Add the template tag somewhere in the first 10 lines of a note and it will be recognized as an available template when you create a note.
 
 ### The Archive Bundle ID (`the_archive_bundle_id`)
 
@@ -283,7 +283,7 @@ See: [Releases](https://github.com/pryley/alfred-the-archive/releases)
 
 ## Credits
 
-This workflow was created by [Paul Ryley](https://github.com/pryley/). Special thanks to [Acidham](https://github.com/Acidham) author of [Alfred Markdown Notes](https://github.com/Acidham/alfred-markdown-notes) which this workflow was greatly inspired from.
+This workflow was created by [Paul Ryley](https://github.com/pryley/). Special thanks to [Acidham](https://github.com/Acidham) author of [Alfred Markdown Notes](https://github.com/Acidham/alfred-markdown-notes) which was the inspiration for this workflow.
 
 ![](.screenshots/ardonate.png)
 
