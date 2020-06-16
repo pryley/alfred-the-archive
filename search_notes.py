@@ -18,32 +18,32 @@ for file in sorted_file_list:
     c_date = Tools.getDateStr(file['ctime'])
     m_date = Tools.getDateStr(file['mtime'])
     items.setItem(
-        arg = file['path'],
-        subtitle = u"Created: {0}, Modified: {1} (\u2318 Actions, \u2325 Zettel Link, \u21E7 Quicklook)".format(c_date, m_date),
-        title = file['title'],
-        type = "file",
+        arg=file['path'],
+        subtitle=u"Created: {0}, Modified: {1} (\u2318 Actions, \u2325 Paste Wiki Link, \u21E7 Quicklook)".format(c_date, m_date),
+        title=file['title'],
+        type="file",
     )
     items.addMod(
-        arg = "{0}>{1}".format(file['path'], query),
-        icon_path = "icons/action.png",
-        icon_type = "image",
-        key = "cmd",
-        subtitle = "Enter Actions Menu for the Note...",
+        arg="{0}>{1}".format(file['path'], query),
+        icon_path="icons/action.png",
+        icon_type="image",
+        key="cmd",
+        subtitle="Enter Actions Menu for the Note...",
     )
     items.addMod(
-        arg = file['title'],
-        icon_path = "icons/paste.png",
-        icon_type = "image",
-        key = "alt",
-        subtitle = "Paste Zettel link into frontmost app",
+        arg=file['title'],
+        icon_path="icons/paste.png",
+        icon_type="image",
+        key="alt",
+        subtitle="Paste wiki link into frontmost app",
     )
     items.addItem()
 
 if len(items.getItems(response_type="dict")['items']) == 0:
     items.setItem(
-        arg = query,
-        subtitle = u"Create note with title \"{0}\"?".format(query),
-        title = "Nothing found...",
+        arg=query,
+        subtitle=u"Create note with title \"{0}\"?".format(query),
+        title="Nothing found...",
     )
     items.setIcon('icons/new.png', 'image')
     items.addItem()

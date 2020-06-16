@@ -49,9 +49,9 @@ actions = [
 
 for a in actions:
     items.setItem(
-        arg = a.get("arg"),
-        subtitle = a.get("subtitle"),
-        title = a.get("title"),
+        arg=a.get("arg"),
+        subtitle=a.get("subtitle"),
+        title=a.get("title"),
     )
     items.setIcon(a.get("icon"), "image")
     items.addItem()

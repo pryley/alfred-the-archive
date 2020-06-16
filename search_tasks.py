@@ -15,38 +15,38 @@ if len(tasks) > 0:
     for file in tasks:
         file_title = file['title'] if file['title'] != str() else search.getNoteFilename(file['path'])
         items.setItem(
-            arg = file['path'],
-            subtitle = u'\u2192 {0} (Created: {1}) (\u2325 Open in The Archive)'.format(file_title.decode('utf-8'), Tools.getDateStr(file['ctime'])),
-            title = file['todo'],
-            type = 'file',
-            valid = True,
-            variables = {
+            arg=file['path'],
+            subtitle=u'\u2192 {0} (\u2318 Open in The Archive, \u2325 Open in Default Editor)'.format(file['filename'].decode('utf-8')),
+            title=file['todo'],
+            type='file',
+            valid=True,
+            variables={
                 "todo": file['todo'],
                 "todo_query": query,
                 "todo_status": file['status'],
             },
         )
         items.addMod(
-            arg = file['path'],
-            icon_path = "icons/the-archive.png",
-            icon_type = "image",
-            key = "cmd",
-            subtitle = "Open {0} in The Archive".format(file['filename']),
+            arg=file['path'],
+            icon_path="icons/the-archive.png",
+            icon_type="image",
+            key="cmd",
+            subtitle=u"Open \"{0}\" in The Archive".format(file['filename']),
         )
         items.addMod(
-            arg = file['path'],
-            icon_path = "icons/editor.png",
-            icon_type = "image",
-            key = "alt",
-            subtitle = "Open {0} in the default editor".format(file['filename']),
+            arg=file['path'],
+            icon_path="icons/editor.png",
+            icon_type="image",
+            key="alt",
+            subtitle=u"Open \"{0}\" in the default editor".format(file['filename']),
         )
         items.setIcon('icons/todo.png' if file['status'] == 'pending' else 'icons/done.png', 'image')
         items.addItem()
 else:
     items.setItem(
-        title = "No tasks found!",
-        subtitle = "No task matches the search term",
-        valid = False,
+        title="No tasks found!",
+        subtitle="No task matches the search term",
+        valid=False,
     )
     items.addItem()
 items.write()

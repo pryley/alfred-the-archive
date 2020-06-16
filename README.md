@@ -108,9 +108,9 @@ There are two modifier keys (and one modifier key combo) that you can use when c
 
 ## Templates
 
-To use a template, create a note in "The Archive" and tag it somewhere in the first 5 lines of the note with `#template` (you can change the tag used for templates in the [workflow config](#configuration)).
+To use a template, create a note in "The Archive" and tag the beginning of the note with `#template` (you can change the tag used for templates in the [workflow config](#configuration)).
 
-> **Note:** You can change the workflow config by typing `arconfig` in Alfred.
+> **Note:** The template tag must be used within the first 10 lines of the note else it will not be recognised as a template.
 
 You may use the following placeholders in your templates:
 
