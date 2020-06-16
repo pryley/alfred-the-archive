@@ -21,7 +21,7 @@ class Notes(object):
         '#': '-'
     }
 
-    FALLBACK_CONTENT = "# {title}\n{tags}\n{content}"
+    FALLBACK_CONTENT = "{tags}\n\n{content}"
 
     REPL_MAP = {
         '[': '',
