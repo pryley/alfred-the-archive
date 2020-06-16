@@ -9,8 +9,8 @@ import sys
 reload(sys)
 sys.setdefaultencoding('utf-8')
 
-clipboard = Tools.getArgv(1)
-query = Tools.getEnv('query').encode('utf-8')
+query = Tools.getArgv(1).encode('utf-8')
+clipboard = Tools.getEnv('clipboard')
 template = Tools.getEnv('template')
 paste = Tools.getEnv('paste')
 

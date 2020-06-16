@@ -2,7 +2,6 @@
 # encoding: utf-8
 
 from Alfred import Tools
-from Notes import Search
 from shutil import copy2
 import os
 import re
@@ -22,8 +21,7 @@ def copyFile(source, target_dir):
     return os.path.join(target_dir, file_name)
 
 def getMediaFolder():
-    my_notes = Search()
-    notes_path = my_notes.getNotesPath()
+    notes_path = Tools.getNotesPath()
     media_dir = Tools.settings('resourcesSubfolder', 'media')
     media_path = os.path.join(notes_path, media_dir)
     if not(os.path.exists(media_path)):

@@ -48,7 +48,7 @@ class Notes(object):
         self.default_date_format = os.getenv('default_date_format')
         self.default_extension = self.__getDefaultExtension()
         self.exact_match = True if os.getenv('exact_match') == 'True' else False
-        self.path = self.__getNotesPath()
+        self.path = Tools.getNotesPath()
         self.prefer_filename_to_title = True if os.getenv('prefer_filename_to_title') == 'True' else False
         self.search_content = True if os.getenv('search_content') == 'True' else False
         self.search_yaml_tags_only = True if os.getenv('search_yaml_tags_only') == 'True' else False
@@ -67,20 +67,11 @@ class Notes(object):
         ext = Tools.settings('fileExtension', 'txt')
         return Notes.normalizeExt(ext)
 
-    @staticmethod
-    def __getNotesPath():
-        archive_url = Tools.settings('archiveURL')
-        path = urllib2.unquote(archive_url[len("file://"):])
-        return path
-
     def getAllowedExtensions(self):
         return self.allowed_extensions
 
     def getDefaultExtension(self):
         return self.default_extension
-
-    def getNotesPath(self):
-        return self.path
 
     @staticmethod
     def normalizeExt(ext):
@@ -117,11 +108,11 @@ class Note(Notes):
 
     def getTargetFilePath(self, file_name):
         file_name = file_name.rstrip().lstrip()
-        file_path = os.path.join(self.path, "{0}{1}".format(file_name, self.default_extension))
+        file_path = os.path.join(self.path, file_name + self.default_extension)
         if os.path.isfile(file_path):
-            # TODO: change the zettel ID instead
-            new_file_name = Tools.strJoin(file_name, ' ', Tools.getTodayDate('%d-%m-%Y'))
-            file_path = os.path.join(self.path, "{0}{1}".format(new_file_name, self.default_extension))
+            new_file_name = Tools.increment(file_name)
+            return self.getTargetFilePath(new_file_name)
+        file_path = os.path.join(self.path, file_name + self.default_extension)
         return file_path
 
     def normalizeFilename(self, filename):
@@ -347,3 +338,18 @@ class Search(Notes):
                 if self.isNoteTagged(file['path'], template_tag):
                     templates.append(file)
         return templates
+
+    def zettelIdExists(self, zettelId):
+        err = 0
+        file_list = list()
+        try:
+            file_list = os.listdir(self.path)
+        except OSError as e:
+            err = e.errno
+            pass
+        if err == 0:
+            for filename in file_list:
+                if filename.startswith(zettelId):
+                    return True
+        return False
+

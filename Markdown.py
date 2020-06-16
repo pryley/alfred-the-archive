@@ -42,13 +42,12 @@ class Markdown(object):
         return HTMLParser.HTMLParser().unescape(string).encode('utf-8')
 
     def __markdownHeader(self):
-        today = Tools.getTodayDate(fmt="%d.%m.%Y")
         return "---\n" \
                "Title: {title}\n" \
                "Created: {date}\n" \
                "Tags: #WebClip\n" \
                "Url: {url}\n" \
-               "---\n".format(date=today, url=self.getMdUrl(), title=self.getTitle())
+               "---\n".format(date=Tools.getTodayDate(), url=self.getMdUrl(), title=self.getTitle())
 
     def getHtml(self):
         return self.html

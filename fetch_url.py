@@ -10,7 +10,7 @@ import sys
 
 search = Search()
 ext = search.getDefaultExtension()
-path = search.getNotesPath()
+path = Tools.getNotesPath()
 query = Tools.getArgv(1)
 
 markdown = Markdown(query)

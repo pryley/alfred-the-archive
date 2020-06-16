@@ -1255,7 +1255,7 @@
 			<key>config</key>
 			<dict>
 				<key>seconds</key>
-				<string>.5</string>
+				<string>1</string>
 			</dict>
 			<key>type</key>
 			<string>alfred.workflow.utility.delay</string>
@@ -1421,13 +1421,13 @@
 			<key>config</key>
 			<dict>
 				<key>argument</key>
-				<string>{clipboard}</string>
+				<string>{var:split1}</string>
 				<key>variables</key>
 				<dict>
+					<key>clipboard</key>
+					<string>{clipboard}</string>
 					<key>paste</key>
 					<string>{var:split3}</string>
-					<key>query</key>
-					<string>{var:split1}</string>
 					<key>template</key>
 					<string>{var:split2}</string>
 				</dict>
@@ -2891,7 +2891,7 @@ end alfred_script</string>
 		<key>default_date_format</key>
 		<string>%A, %d %B, %Y at %H:%M</string>
 		<key>default_zettel_id_format</key>
-		<string>%Y%m%d%H%M</string>
+		<string>%y%m%d%H%M%S</string>
 		<key>exact_match</key>
 		<string>False</string>
 		<key>prefer_filename_to_title</key>
@@ -2909,8 +2909,6 @@ end alfred_script</string>
 		<key>use_zettel_id_in_title</key>
 		<string>False</string>
 	</dict>
-	<key>variablesdontexport</key>
-	<array/>
 	<key>version</key>
 	<string>1.1.0</string>
 	<key>webaddress</key>
