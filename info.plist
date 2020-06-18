@@ -2964,7 +2964,7 @@ end alfred_script</string>
 		<key>default_date_format</key>
 		<string>%A, %d %B, %Y at %H:%M</string>
 		<key>default_zettel_id_format</key>
-		<string>%y%m%d%H%M%S</string>
+		<string>%Y%m%d%H%M</string>
 		<key>exact_match</key>
 		<string>False</string>
 		<key>prefer_filename_to_title</key>
@@ -2985,7 +2985,7 @@ end alfred_script</string>
 	<key>variablesdontexport</key>
 	<array/>
 	<key>version</key>
-	<string>1.3.1</string>
+	<string>1.3.2</string>
 	<key>webaddress</key>
 	<string>https://github.com/pryley/alfred-the-archive</string>
 </dict>

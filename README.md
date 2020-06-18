@@ -187,7 +187,7 @@ To change the configuration of the workflow, type `arconfig` in Alfred. You can 
 
 ### Default Date Format (`default_date_format`)
 
-> Default value: `%d.%m.%Y %H.%M`
+> Default value: `%A, %d %B, %Y at %H:%M`
 
 This option defines the datetime format used for the `{date}` placeholder in your templates. 
 

@@ -2,6 +2,6 @@
 
 > Default value: `%Y%m%d%H%M`
 
-This option defines the format used for the generated Zettel ID and the `{zettel_id}` placeholder in your templates. Since there is the potential of creating duplicate Zettel IDs with this workflow, you may wish to customise this. For example, I use the following format for my Zettel IDs:  `%y%m%d%H%M%S` (i.e. yymmddHHMMSS).
+This option defines the datetime format used for the generated Zettel ID and the `{zettel_id}` placeholder in your templates.
 
 Please refer to the [Python strftime reference](https://strftime.org/) for the available datetime variables.
