@@ -8,7 +8,7 @@ import os
 import sys
 
 query = Tools.getArgv(1)
-title = Search().getNoteTitle(query)
+title = Search().getNoteTitle(query).strip()
 filename = pathname2url(os.path.basename(query))
 output = '[' + title + '](' + filename + ')'
 
