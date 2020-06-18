@@ -1,8 +1,8 @@
 #!/usr/bin/env python
 # encoding: utf-8
 
+from datetime import datetime, timedelta
 from Plist import Plist
-import datetime
 import json
 import os
 import re
@@ -128,21 +128,21 @@ class Tools(object):
     def getTodayDate(fmt="%d.%m.%Y"):
         default_date_format = os.getenv('default_date_format')
         date_format = fmt if default_date_format == str() else default_date_format
-        now = datetime.datetime.now()
+        now = datetime.now()
         return now.strftime(date_format)
 
     @staticmethod
     def getZettelId():
         default_zettel_id_format = os.getenv('default_zettel_id_format');
         zettel_id_format = "%Y%m%d%H%M" if default_zettel_id_format == str() else default_zettel_id_format
-        now = datetime.datetime.now()
+        now = datetime.now()
         zettel_id = now.strftime(zettel_id_format)
         if zettel_id.isdigit():
             path = Tools.getNotesPath()
             while Tools.zettelIdExists(path, zettel_id):
-                # increment the zettel ID, the '9' is temporarily used in case the ID begins with a 0
-                new_zettel_id = str(int('9' + zettel_id) + 1)[1:]
-                zettel_id = new_zettel_id
+                zettel_id_date = datetime.strptime(zettel_id, zettel_id_format)
+                new_zettel_id_date = zettel_id_date + timedelta(minutes=1)
+                zettel_id = new_zettel_id_date.strftime(zettel_id_format)
         return zettel_id;
 
     @staticmethod
