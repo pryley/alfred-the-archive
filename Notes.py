@@ -44,9 +44,9 @@ class Notes(object):
     }
 
     def __init__(self):
-        self.allowed_extensions = self.__getAllowedExtensions()
+        self.allowed_extensions = self._getAllowedExtensions()
         self.default_date_format = os.getenv('default_date_format')
-        self.default_extension = self.__getDefaultExtension()
+        self.default_extension = self._getDefaultExtension()
         self.exact_match = True if os.getenv('exact_match') == 'True' else False
         self.path = Tools.getNotesPath()
         self.prefer_filename_to_title = True if os.getenv('prefer_filename_to_title') == 'True' else False
@@ -57,13 +57,13 @@ class Notes(object):
         self.use_zettel_id_in_title = True if os.getenv('use_zettel_id_in_title') == 'True' else False
 
     @staticmethod
-    def __getAllowedExtensions():
+    def _getAllowedExtensions():
         extensions = Tools.settings('fileExtensions', ['md','txt'])
         allowed_extensions = [Notes.normalizeExt(ext) for ext in extensions]
         return tuple(allowed_extensions)
 
     @staticmethod
-    def __getDefaultExtension():
+    def _getDefaultExtension():
         ext = Tools.settings('fileExtension', 'txt')
         return Notes.normalizeExt(ext)
 
@@ -137,7 +137,7 @@ class Search(Notes):
     def __init__(self):
         super(Search, self).__init__()
 
-    def __getFileContent(self, file_path):
+    def _getFileContent(self, file_path):
         if str(file_path).endswith(self.allowed_extensions):
             with open(file_path, 'r') as c:
                 content = c.read()
@@ -145,7 +145,7 @@ class Search(Notes):
             content = str()
         return normalize('NFD', content.decode('utf-8'))
 
-    def __match(self, search_terms, content, operator):
+    def _match(self, search_terms, content, operator):
         content = content.lower()
         content = Tools.strReplace(content, self.REPL_MAP)
         word_list = content.split(' ')
@@ -217,7 +217,7 @@ class Search(Notes):
         return filename_without_extension
 
     def getNoteTitle(self, path):
-        content = self.__getFileContent(path)
+        content = self._getFileContent(path)
         title = self.getNoteFilename(path)
         if not self.prefer_filename_to_title:
             obj = re.search(r'^#{1}\s{1}(.*)', content, re.MULTILINE | re.UNICODE)
@@ -264,11 +264,11 @@ class Search(Notes):
         if file_list is not None:
             for file in file_list:
                 title = self.getNoteTitle(file['path'])
-                if (search_type == 'and' and self.__match(search_terms, title, 'AND')) or (search_type == 'or' and self.__match(search_terms, title, 'OR')):
+                if (search_type == 'and' and self._match(search_terms, title, 'AND')) or (search_type == 'or' and self._match(search_terms, title, 'OR')):
                     new_list.append(file)
                 elif self.search_content:
-                    content = self.__getFileContent(file['path'])
-                    if content != str() and (search_type == 'and' and self.__match(search_terms, content, 'AND')) or (search_type == 'or' and self.__match(search_terms, content, 'OR')):
+                    content = self._getFileContent(file['path'])
+                    if content != str() and (search_type == 'and' and self._match(search_terms, content, 'AND')) or (search_type == 'or' and self._match(search_terms, content, 'OR')):
                         new_list.append(file)
         return new_list
 
@@ -279,7 +279,7 @@ class Search(Notes):
         sorted_file_list = self.getFilesListSorted()
         regex = re.compile(r"#{1}([\w-]+)\s?", re.I) if tag == '' else re.compile(r'#{1}(' + tag + r'[\w-]*)\s?', re.I | re.UNICODE)
         for f in sorted_file_list:
-            content = self.__getFileContent(f['path'])
+            content = self._getFileContent(f['path'])
             if content != str():
                 if self.search_yaml_tags_only:
                     match_obj = re.search(r"\b.*[\s\S](-{3,})", content, re.IGNORECASE | re.UNICODE)
@@ -300,7 +300,7 @@ class Search(Notes):
         regexPending = re.compile(r'[-|\*] {1}\[ \] {1}(.+)', re.I) if todo == '' else re.compile(r'[-|\*] {1}\[ \] {1}(.*' + todo + '.*)', re.I)
         regexDone = re.compile(r'[-|\*] {1}\[x\] {1}(.+)', re.I) if todo == '' else re.compile(r'[-|\*] {1}\[x\] {1}(.*' + todo + '.*)', re.I)
         for f in sorted_file_list:
-            content = self.__getFileContent(f['path'])
+            content = self._getFileContent(f['path'])
             if content != str():
                 results = re.findall(regexPending, content)
                 for i in results:
@@ -352,4 +352,3 @@ class Search(Notes):
                 if filename.startswith(zettelId):
                     return True
         return False
-

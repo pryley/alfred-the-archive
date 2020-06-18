@@ -13,10 +13,10 @@ class Markdown(object):
 
     def __init__(self, url):
         self.url = url
-        self.html = self.__fetchHtml()
-        self.md = self.__fetchMd()
+        self.html = self._fetchHtml()
+        self.md = self._fetchMd()
 
-    def __fetchHtml(self):
+    def _fetchHtml(self):
         try:
             r = urllib2.urlopen(self.url)
             response = r.read().decode('utf-8')
@@ -25,7 +25,7 @@ class Markdown(object):
             pass
         return response
 
-    def __fetchMd(self):
+    def _fetchMd(self):
         try:
             cmd = '{0} {1}'.format(self.PANDOC, self.url)
             md = os.popen(cmd)
@@ -36,12 +36,12 @@ class Markdown(object):
         return resp
 
     @staticmethod
-    def __htmlDecode(string):
+    def _htmlDecode(string):
         string = urllib2.unquote(string)
         # return string
         return HTMLParser.HTMLParser().unescape(string).encode('utf-8')
 
-    def __markdownHeader(self):
+    def _markdownHeader(self):
         return "---\n" \
                "Title: {title}\n" \
                "Created: {date}\n" \
@@ -53,7 +53,7 @@ class Markdown(object):
         return self.html
 
     def getMarkdownContent(self):
-        out = self.__markdownHeader()
+        out = self._markdownHeader()
         out += self.getMd()
         return out
 
@@ -66,7 +66,7 @@ class Markdown(object):
 
     def getTitle(self):
         res = re.findall(r'<title>[\n\t\s]*(.+)[\n\t\s]*</title>', self.html, re.MULTILINE)
-        return self.__htmlDecode(''.join(res))
+        return self._htmlDecode(''.join(res))
 
     def getUrl(self):
         return self.url.decode('utf-8')

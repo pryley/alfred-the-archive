@@ -17,7 +17,7 @@ class Items(object):
         self.items = []
         self.mods = {}
 
-    def __defineIcon(self, path, m_type=""):
+    def _defineIcon(self, path, m_type=""):
         icon = {}
         if m_type != "":
             icon.update({"type": m_type})
@@ -39,7 +39,7 @@ class Items(object):
         mod.update({"subtitle": subtitle})
         mod.update({"valid": valid})
         if icon_path != "":
-            the_icon = self.__defineIcon(icon_path, icon_type)
+            the_icon = self._defineIcon(icon_path, icon_type)
             mod.update({"icon": the_icon})
         self.mods.update({key: mod})
 
@@ -66,7 +66,7 @@ class Items(object):
             return json.dumps(the_items, indent=4)
 
     def setIcon(self, m_path, m_type=""):
-        self.setKeyValue("icon", self.__defineIcon(m_path, m_type))
+        self.setKeyValue("icon", self._defineIcon(m_path, m_type))
 
     def setItem(self, **kwargs):
         for key, value in kwargs.items():
