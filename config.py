@@ -51,7 +51,8 @@ def print_config(query):
             items.setIcon(icon, 'image')
             items.addItem()
 
-def write_config(key, value):
+def write_config(key, val):
+    value = Tools.normalize(val)
     Plist().setVariable(key, value)
 
 query = Tools.getArgv(1)
