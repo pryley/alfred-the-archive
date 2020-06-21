@@ -2968,7 +2968,7 @@ end alfred_script</string>
 		<key>exact_match</key>
 		<string>False</string>
 		<key>prefer_filename_to_title</key>
-		<string>False</string>
+		<string>True</string>
 		<key>search_content</key>
 		<string>False</string>
 		<key>search_yaml_tags_only</key>

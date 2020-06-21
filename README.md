@@ -213,7 +213,7 @@ When set to `False`, searching for `Books` will match `Books` as well as `Bookst
 
 ### Prefer Filename to Title (`prefer_filename_to_title`)
 
-> Default value: `False`
+> Default value: `True`
 
 This option define what is value used when matching a search result in The Archive (i.e. `thearchive://match/{value}`).
 
