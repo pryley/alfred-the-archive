@@ -36,7 +36,7 @@ This is an comprehensive workflow for The Archive that helps you work with your 
 
 To search your notes, type `ar` along with a space, then enter your search query. 
 
-![](.screenshots/ar.png)
+![](screenshots/ar.png)
 
 > **Tip:** You may change the [exact_match](#exact-match-exact_match) and [search_content](#search-content-search_content) options to configure how the workflow searches The Archive.
 
@@ -52,7 +52,7 @@ There are three modifier keys that you can use with the search results:
 
 3. **⌘ Command:** Holding this key down as you press Enter will display the following "Actions" menu:
 
-   ![](.screenshots/ar_action_menu.png)
+   ![](screenshots/ar_action_menu.png)
 
 ## Searching Tasks
 
@@ -65,7 +65,7 @@ Tasks are Github-flavoured checkboxes:
 
 To search for tasks in your notes, type `artask` along with a space, then enter your search query. Pressing Enter on a task will toggle its status (checked/unchecked).
 
-![](.screenshots/artask.png)
+![](screenshots/artask.png)
 
 ### Modifier keys
 
@@ -79,7 +79,7 @@ There are two modifier keys that you can use with tasks:
 
 To search the tags in your notes, type `artag` along with a space, then enter your search query. Pressing Enter on a tag will match all notes that contain the tag in The Archive.
 
-![](.screenshots/artag.png)
+![](screenshots/artag.png)
 
 > **Note:** Due to a limitation of the external link URL scheme that The Archive uses, it is not possible to pass the `#` symbol along with the tag name to The Archive.
 
@@ -93,13 +93,13 @@ There is one modifier key that you can use with tags:
 
 To display a random note in The Archive, type `arrandom` and press Enter.
 
-![](.screenshots/arrandom.png)
+![](screenshots/arrandom.png)
 
 ## Creating Notes
 
 To create a note, type `arnew` along with a space, then enter the title of the note and optionally some tags. If you use a template, the title you enter will fill the `{title}` placeholder, and any tags you enter will fill the `{tags}` placeholder.
 
-![](.screenshots/arnew.png)
+![](screenshots/arnew.png)
 
 ### Modifier keys
 
@@ -115,7 +115,7 @@ There are two modifier keys (and one modifier key combo) that you can use when c
 
 Templates are simply notes in The Archive that are tagged with `#template`. To create a note using a template, type `arnew` along with a space, enter the title of the note and optionally some tags, and then select the template that you wish to use.
 
-![](.screenshots/arnew_templates.png)
+![](screenshots/arnew_templates.png)
 
 > **Note:** The template tag must be used within the first 10 lines of the note else it will not be recognised as a template.
 
@@ -160,7 +160,7 @@ There are three modifier keys (and one modifier key combo) that you can use with
 
 To import the page content of a webpage into a note, type `arurl` along with a space and enter a valid URL beginning with `http(s)`.
 
-![](.screenshots/arurl.png)
+![](screenshots/arurl.png)
 
 > **Note:** This action requires that you have [pandoc installed on your mac](#installation). Pandoc is a universal document converter and is used to convert the HTML of a webpage to Github-flavoured markdown. If you do not have pandoc installed, then only the URL will be copied into the note.
 
@@ -168,7 +168,7 @@ To import the page content of a webpage into a note, type `arurl` along with a s
 
 The workflow provides an **Add image to The Archive** File Action which allows you to import a JPG or PNG image into the Resources Subfolder of your notes directory.
 
-![](.screenshots/image_file_action.png)
+![](screenshots/image_file_action.png)
 
 To use the File Action:
 
@@ -181,7 +181,7 @@ To use the File Action:
 
 To change the configuration of the workflow, type `arconfig` in Alfred. You can also view the help file for each highlighted option with Quicklook by pressing the **⇧ Shift** key.
 
-![](.screenshots/arconfig.png)
+![](screenshots/arconfig.png)
 
 > **Note:** To view markdown files with Quicklook, you may need to [install a Quicklook extension](#installation). You can do this with [Homebrew](https://brew.sh/).
 
@@ -215,7 +215,7 @@ When set to `False`, searching for `Books` will match `Books` as well as `Bookst
 
 > Default value: `True`
 
-This option define what is value used when matching a search result in The Archive (i.e. `thearchive://match/{value}`).
+This option defines which value is used when matching a search result in The Archive (i.e. `thearchive://match/{value}`).
 
 When set to `True`, the note filename will be used.
 
@@ -275,7 +275,7 @@ When set to `False`, the Zettel ID will not be included in the `{title}` placeho
 
 You may view this README.md file at any time by typing `arhelp` in Alfred.
 
-![](.screenshots/arhelp.png)
+![](screenshots/arhelp.png)
 
 ## Changelog
 
@@ -285,7 +285,7 @@ See: [Releases](https://github.com/pryley/alfred-the-archive/releases)
 
 This workflow was created by [Paul Ryley](https://github.com/pryley/). Special thanks to [Acidham](https://github.com/Acidham) author of [Alfred Markdown Notes](https://github.com/Acidham/alfred-markdown-notes) which was the inspiration for this workflow.
 
-![](.screenshots/ardonate.png)
+![](screenshots/ardonate.png)
 
 ## License
 

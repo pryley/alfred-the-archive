@@ -2,7 +2,7 @@
 
 > Default value: `True`
 
-This option define what is value used when matching a search result in The Archive (i.e. `thearchive://match/{value}`).
+This option defines which value is used when matching a search result in The Archive (i.e. `thearchive://match/{value}`).
 
 When set to `True`, the note filename will be used.
 
