@@ -146,11 +146,37 @@
 				<false/>
 			</dict>
 		</array>
+		<key>28072C72-6F5F-49D3-9C79-F39D03C75A11</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>C36841B1-1B96-411D-BF40-7B4A70E3AE09</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
 		<key>3078B7FC-DAD0-48C1-938B-E2C5102800D8</key>
 		<array>
 			<dict>
 				<key>destinationuid</key>
 				<string>A2D9130D-E0ED-4A2F-9D37-4EE26F2B16F9</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>341A03B4-7E79-4AD7-A347-AF17C634D4FF</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>C36841B1-1B96-411D-BF40-7B4A70E3AE09</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -292,16 +318,6 @@
 			</dict>
 			<dict>
 				<key>destinationuid</key>
-				<string>35224C2A-BA32-4CA1-8769-35B3B7F1D1C2</string>
-				<key>modifiers</key>
-				<integer>0</integer>
-				<key>modifiersubtext</key>
-				<string></string>
-				<key>vitoclose</key>
-				<false/>
-			</dict>
-			<dict>
-				<key>destinationuid</key>
 				<string>3666E55C-5EA1-4C6A-9565-22A55CE17403</string>
 				<key>modifiers</key>
 				<integer>1048576</integer>
@@ -316,6 +332,19 @@
 			<dict>
 				<key>destinationuid</key>
 				<string>DBE958B2-368A-48F9-A8AB-1DC9FC300B27</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>65FB1EF4-D09E-4070-BB2E-E3FF6FB331EA</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>C36841B1-1B96-411D-BF40-7B4A70E3AE09</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -355,6 +384,19 @@
 			<dict>
 				<key>destinationuid</key>
 				<string>DE1B8FAF-256C-4AD9-BE4E-9EBCFB71C52D</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>82C3724E-6E6D-4282-A8D5-F528A6D5A0AE</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>C36841B1-1B96-411D-BF40-7B4A70E3AE09</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -548,6 +590,19 @@
 			<dict>
 				<key>destinationuid</key>
 				<string>CB491715-463C-4A1F-BF00-4EF95002AF65</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>C36841B1-1B96-411D-BF40-7B4A70E3AE09</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>51A1F4B9-D0F3-40BD-AB30-22AF874BA1A9</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -792,6 +847,32 @@
 			<dict>
 				<key>destinationuid</key>
 				<string>A2D9130D-E0ED-4A2F-9D37-4EE26F2B16F9</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>F2D4CBD3-8C5E-42EE-903C-DDD8ADA6F33B</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>C36841B1-1B96-411D-BF40-7B4A70E3AE09</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>F6F03505-7E5B-44D3-9A34-845ABDC79BA1</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>C36841B1-1B96-411D-BF40-7B4A70E3AE09</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -2039,97 +2120,6 @@
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>concurrently</key>
-				<false/>
-				<key>escaping</key>
-				<integer>102</integer>
-				<key>script</key>
-				<string># THESE VARIABLES MUST BE SET. SEE THE ONEUPDATER README FOR AN EXPLANATION OF EACH.
-readonly remote_info_plist="https://raw.githubusercontent.com/pryley/alfred-the-archive/master/src/info.plist"
-readonly workflow_url="pryley/alfred-the-archive"
-readonly download_type='github_release'
-readonly frequency_check='4'
-
-# FROM HERE ON, CODE SHOULD BE LEFT UNTOUCHED!
-function abort {
-  echo "${1}" &gt;&amp;2
-  exit 1
-}
-
-function url_exists {
-  curl --silent --location --output /dev/null --fail --range 0-0 "${1}"
-}
-
-function notification {
-  readonly local notificator="$(find . -type d -name 'Notificator.app')"
-  if [[ -n "${notificator}" ]]; then
-    "${notificator}/Contents/Resources/Scripts/notificator" --message "${1}" --title "${alfred_workflow_name}" --subtitle 'A new version is available'
-    return
-  fi
-
-  readonly local terminal_notifier="$(find . -type f -name 'terminal-notifier')"
-  if [[ -n "${terminal_notifier}" ]]; then
-    "${terminal_notifier}" -title "${alfred_workflow_name}" -subtitle 'A new version is available' -message "${1}"
-    return
-  fi
-
-  osascript -e "display notification \"${1}\" with title \"${alfred_workflow_name}\" subtitle \"A new version is available\""
-}
-
-# Local sanity checks
-readonly local_info_plist='info.plist'
-readonly local_version="$(/usr/libexec/PlistBuddy -c 'print version' "${local_info_plist}")"
-
-[[ -n "${local_version}" ]] || abort 'You need to set a workflow version in the configuration sheet.'
-[[ "${download_type}" =~ ^(direct|page|github_release)$ ]] || abort "'download_type' (${download_type}) needs to be one of 'direct', 'page', or 'github_release'."
-[[ "${frequency_check}" =~ ^[0-9]+$ ]] || abort "'frequency_check' (${frequency_check}) needs to be a number."
-
-# Check for updates
-if [[ $(find "${local_info_plist}" -mtime +"${frequency_check}"d) ]]; then
-  if ! url_exists "${remote_info_plist}"; then abort "'remote_info_plist' (${remote_info_plist}) appears to not be reachable."; fi # Remote sanity check
-
-  readonly tmp_file="$(mktemp)"
-  curl --silent --location --output "${tmp_file}" "${remote_info_plist}"
-  readonly remote_version="$(/usr/libexec/PlistBuddy -c 'print version' "${tmp_file}")"
-
-  if [[ "${local_version}" == "${remote_version}" ]]; then
-    touch "${local_info_plist}" # Reset timer by touching local file
-    exit 0
-  fi
-
-  if [[ "${download_type}" == 'page' ]]; then
-    notification 'Opening download page…'
-    open "${workflow_url}"
-    exit 0
-  fi
-
-  download_url="$([[ "${download_type}" == 'github_release' ]] &amp;&amp; curl --silent "https://api.github.com/repos/${workflow_url}/releases/latest" | grep 'browser_download_url' | head -1 | sed -E 's/.*browser_download_url": "(.*)"/\1/' || echo "${workflow_url}")"
-
-  if url_exists "${download_url}"; then
-    notification 'Downloading and installing…'
-    curl --silent --location --output "${HOME}/Downloads/${alfred_workflow_name}.alfredworkflow" "${download_url}"
-    open "${HOME}/Downloads/${alfred_workflow_name}.alfredworkflow"
-  else
-    abort "'workflow_url' (${download_url}) appears to not be reachable."
-  fi
-fi</string>
-				<key>scriptargtype</key>
-				<integer>1</integer>
-				<key>scriptfile</key>
-				<string></string>
-				<key>type</key>
-				<integer>0</integer>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.action.script</string>
-			<key>uid</key>
-			<string>35224C2A-BA32-4CA1-8769-35B3B7F1D1C2</string>
-			<key>version</key>
-			<integer>2</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
 				<key>conditions</key>
 				<array>
 					<dict>
@@ -2263,6 +2253,43 @@ fi</string>
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>action</key>
+				<integer>0</integer>
+				<key>argument</key>
+				<integer>3</integer>
+				<key>argumenttext</key>
+				<string>#</string>
+				<key>focusedappvariable</key>
+				<false/>
+				<key>focusedappvariablename</key>
+				<string></string>
+				<key>hotkey</key>
+				<integer>18</integer>
+				<key>hotmod</key>
+				<integer>1048576</integer>
+				<key>hotstring</key>
+				<string>1</string>
+				<key>leftcursor</key>
+				<false/>
+				<key>modsmode</key>
+				<integer>0</integer>
+				<key>relatedApps</key>
+				<array>
+					<string>de.zettelkasten.TheArchive</string>
+				</array>
+				<key>relatedAppsMode</key>
+				<integer>1</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.trigger.hotkey</string>
+			<key>uid</key>
+			<string>28072C72-6F5F-49D3-9C79-F39D03C75A11</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
 				<key>applescript</key>
 				<string>on alfred_script(q)
 set posixfile to POSIX file q
@@ -2337,6 +2364,21 @@ end alfred_script</string>
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>argument</key>
+				<string></string>
+				<key>variables</key>
+				<dict/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.argument</string>
+			<key>uid</key>
+			<string>C767AF6B-DF2C-40A1-8F23-916EDE028F7F</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
 				<key>delimiter</key>
 				<string>&gt;</string>
 				<key>trimarguments</key>
@@ -2348,21 +2390,6 @@ end alfred_script</string>
 			<string>alfred.workflow.utility.split</string>
 			<key>uid</key>
 			<string>3666E55C-5EA1-4C6A-9565-22A55CE17403</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>argument</key>
-				<string></string>
-				<key>variables</key>
-				<dict/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.utility.argument</string>
-			<key>uid</key>
-			<string>C767AF6B-DF2C-40A1-8F23-916EDE028F7F</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
@@ -2418,6 +2445,100 @@ end alfred_script</string>
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>action</key>
+				<integer>0</integer>
+				<key>argument</key>
+				<integer>3</integer>
+				<key>argumenttext</key>
+				<string>##</string>
+				<key>focusedappvariable</key>
+				<false/>
+				<key>focusedappvariablename</key>
+				<string></string>
+				<key>hotkey</key>
+				<integer>19</integer>
+				<key>hotmod</key>
+				<integer>1048576</integer>
+				<key>hotstring</key>
+				<string>2</string>
+				<key>leftcursor</key>
+				<false/>
+				<key>modsmode</key>
+				<integer>0</integer>
+				<key>relatedApps</key>
+				<array>
+					<string>de.zettelkasten.TheArchive</string>
+				</array>
+				<key>relatedAppsMode</key>
+				<integer>1</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.trigger.hotkey</string>
+			<key>uid</key>
+			<string>65FB1EF4-D09E-4070-BB2E-E3FF6FB331EA</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>applescript</key>
+				<string>use AppleScript version "2.4"use framework "AppKit"use framework "Foundation"use scripting additionson alfred_script(level)	set oldClip to my fetchStorableClipboard()	set thePasteboard to current application's NSPasteboard's generalPasteboard()	set theCount to thePasteboard's changeCount()	tell application "System Events" to keystroke "c" using {command down}	repeat 20 times		if thePasteboard's changeCount() is not theCount then exit repeat		delay 0.1	end repeat	set regex to "^([#]+)?(\\s+)?(.*)"	set input to (the clipboard)	set heading to regex_match from the input against regex given replacement:"$3"	set the clipboard to level &amp; " " &amp; heading	tell application "System Events" to keystroke "v" using {command down}	delay 0.2	my putOnClipboard:oldClipend alfred_scripton fetchStorableClipboard()
+    set aMutableArray to current application's NSMutableArray's array()
+    set thePasteboard to current application's NSPasteboard's generalPasteboard()
+    repeat with anItem in thePasteboard's pasteboardItems()
+        set newPBItem to current application's NSPasteboardItem's alloc()'s init()
+        set theTypes to anItem's |types|()
+        repeat with aType in theTypes
+            set theData to (anItem's dataForType:aType)'s mutableCopy()
+            if theData is not missing value then
+                (newPBItem's setData:theData forType:aType)
+            end if
+        end repeat
+        (aMutableArray's addObject:newPBItem)
+    end repeat
+    return aMutableArray
+end fetchStorableClipboard
+
+on putOnClipboard:theArray
+    set thePasteboard to current application's NSPasteboard's generalPasteboard()
+    thePasteboard's clearContents()
+    thePasteboard's writeObjects:theArray
+end putOnClipboard:on regex_match against pattern from str given replacement:fmt	set regex to current application's NSRegularExpression's regularExpressionWithPattern:pattern options:(current application's NSRegularExpressionCaseInsensitive) |error|:(missing value)	(regex's stringByReplacingMatchesInString:str options:0 range:{0, length of str} withTemplate:fmt) as textend regex_match</string>
+				<key>cachescript</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.applescript</string>
+			<key>uid</key>
+			<string>51A1F4B9-D0F3-40BD-AB30-22AF874BA1A9</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>count</key>
+				<integer>1</integer>
+				<key>keychar</key>
+				<string>l</string>
+				<key>keycode</key>
+				<integer>-1</integer>
+				<key>keymod</key>
+				<integer>1179648</integer>
+				<key>overridewithargument</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.dispatchkeycombo</string>
+			<key>uid</key>
+			<string>C36841B1-1B96-411D-BF40-7B4A70E3AE09</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
 				<key>argument</key>
 				<string>{var:action2}</string>
 				<key>variables</key>
@@ -2429,6 +2550,154 @@ end alfred_script</string>
 			<string>EB8A1BFE-4152-4203-A6B8-DAA827BA4932</string>
 			<key>version</key>
 			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>action</key>
+				<integer>0</integer>
+				<key>argument</key>
+				<integer>3</integer>
+				<key>argumenttext</key>
+				<string>###</string>
+				<key>focusedappvariable</key>
+				<false/>
+				<key>focusedappvariablename</key>
+				<string></string>
+				<key>hotkey</key>
+				<integer>20</integer>
+				<key>hotmod</key>
+				<integer>1048576</integer>
+				<key>hotstring</key>
+				<string>3</string>
+				<key>leftcursor</key>
+				<false/>
+				<key>modsmode</key>
+				<integer>0</integer>
+				<key>relatedApps</key>
+				<array>
+					<string>de.zettelkasten.TheArchive</string>
+				</array>
+				<key>relatedAppsMode</key>
+				<integer>1</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.trigger.hotkey</string>
+			<key>uid</key>
+			<string>F6F03505-7E5B-44D3-9A34-845ABDC79BA1</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>action</key>
+				<integer>0</integer>
+				<key>argument</key>
+				<integer>3</integer>
+				<key>argumenttext</key>
+				<string>####</string>
+				<key>focusedappvariable</key>
+				<false/>
+				<key>focusedappvariablename</key>
+				<string></string>
+				<key>hotkey</key>
+				<integer>21</integer>
+				<key>hotmod</key>
+				<integer>1048576</integer>
+				<key>hotstring</key>
+				<string>4</string>
+				<key>leftcursor</key>
+				<false/>
+				<key>modsmode</key>
+				<integer>0</integer>
+				<key>relatedApps</key>
+				<array>
+					<string>de.zettelkasten.TheArchive</string>
+				</array>
+				<key>relatedAppsMode</key>
+				<integer>1</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.trigger.hotkey</string>
+			<key>uid</key>
+			<string>341A03B4-7E79-4AD7-A347-AF17C634D4FF</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>action</key>
+				<integer>0</integer>
+				<key>argument</key>
+				<integer>3</integer>
+				<key>argumenttext</key>
+				<string>#####</string>
+				<key>focusedappvariable</key>
+				<false/>
+				<key>focusedappvariablename</key>
+				<string></string>
+				<key>hotkey</key>
+				<integer>23</integer>
+				<key>hotmod</key>
+				<integer>1048576</integer>
+				<key>hotstring</key>
+				<string>5</string>
+				<key>leftcursor</key>
+				<false/>
+				<key>modsmode</key>
+				<integer>0</integer>
+				<key>relatedApps</key>
+				<array>
+					<string>de.zettelkasten.TheArchive</string>
+				</array>
+				<key>relatedAppsMode</key>
+				<integer>1</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.trigger.hotkey</string>
+			<key>uid</key>
+			<string>F2D4CBD3-8C5E-42EE-903C-DDD8ADA6F33B</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>action</key>
+				<integer>0</integer>
+				<key>argument</key>
+				<integer>3</integer>
+				<key>argumenttext</key>
+				<string>######</string>
+				<key>focusedappvariable</key>
+				<false/>
+				<key>focusedappvariablename</key>
+				<string></string>
+				<key>hotkey</key>
+				<integer>22</integer>
+				<key>hotmod</key>
+				<integer>1048576</integer>
+				<key>hotstring</key>
+				<string>6</string>
+				<key>leftcursor</key>
+				<false/>
+				<key>modsmode</key>
+				<integer>0</integer>
+				<key>relatedApps</key>
+				<array>
+					<string>de.zettelkasten.TheArchive</string>
+				</array>
+				<key>relatedAppsMode</key>
+				<integer>1</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.trigger.hotkey</string>
+			<key>uid</key>
+			<string>82C3724E-6E6D-4282-A8D5-F528A6D5A0AE</string>
+			<key>version</key>
+			<integer>2</integer>
 		</dict>
 	</array>
 	<key>readme</key>
@@ -2485,6 +2754,15 @@ end alfred_script</string>
 			<key>ypos</key>
 			<integer>760</integer>
 		</dict>
+		<key>28072C72-6F5F-49D3-9C79-F39D03C75A11</key>
+		<dict>
+			<key>colorindex</key>
+			<integer>3</integer>
+			<key>xpos</key>
+			<integer>10</integer>
+			<key>ypos</key>
+			<integer>1660</integer>
+		</dict>
 		<key>3078B7FC-DAD0-48C1-938B-E2C5102800D8</key>
 		<dict>
 			<key>colorindex</key>
@@ -2494,16 +2772,14 @@ end alfred_script</string>
 			<key>ypos</key>
 			<integer>760</integer>
 		</dict>
-		<key>35224C2A-BA32-4CA1-8769-35B3B7F1D1C2</key>
+		<key>341A03B4-7E79-4AD7-A347-AF17C634D4FF</key>
 		<dict>
 			<key>colorindex</key>
-			<integer>4</integer>
-			<key>note</key>
-			<string>Workflow Updater</string>
+			<integer>3</integer>
 			<key>xpos</key>
-			<integer>1010</integer>
+			<integer>10</integer>
 			<key>ypos</key>
-			<integer>1660</integer>
+			<integer>2110</integer>
 		</dict>
 		<key>3666E55C-5EA1-4C6A-9565-22A55CE17403</key>
 		<dict>
@@ -2538,6 +2814,15 @@ end alfred_script</string>
 			<integer>210</integer>
 			<key>ypos</key>
 			<integer>1360</integer>
+		</dict>
+		<key>51A1F4B9-D0F3-40BD-AB30-22AF874BA1A9</key>
+		<dict>
+			<key>note</key>
+			<string>Change heading level</string>
+			<key>xpos</key>
+			<integer>1010</integer>
+			<key>ypos</key>
+			<integer>1810</integer>
 		</dict>
 		<key>524CFE69-2161-4618-BC65-7D380B0B3EAD</key>
 		<dict>
@@ -2578,6 +2863,15 @@ end alfred_script</string>
 			<key>ypos</key>
 			<integer>1660</integer>
 		</dict>
+		<key>65FB1EF4-D09E-4070-BB2E-E3FF6FB331EA</key>
+		<dict>
+			<key>colorindex</key>
+			<integer>3</integer>
+			<key>xpos</key>
+			<integer>10</integer>
+			<key>ypos</key>
+			<integer>1810</integer>
+		</dict>
 		<key>699C78CF-86C9-47FA-A077-DB7462FDE43F</key>
 		<dict>
 			<key>xpos</key>
@@ -2602,6 +2896,15 @@ end alfred_script</string>
 			<integer>10</integer>
 			<key>ypos</key>
 			<integer>310</integer>
+		</dict>
+		<key>82C3724E-6E6D-4282-A8D5-F528A6D5A0AE</key>
+		<dict>
+			<key>colorindex</key>
+			<integer>3</integer>
+			<key>xpos</key>
+			<integer>10</integer>
+			<key>ypos</key>
+			<integer>2410</integer>
 		</dict>
 		<key>8A5F7A4E-FC3A-466E-A53A-38313E9F8022</key>
 		<dict>
@@ -2754,6 +3057,13 @@ end alfred_script</string>
 			<integer>10</integer>
 			<key>ypos</key>
 			<integer>1060</integer>
+		</dict>
+		<key>C36841B1-1B96-411D-BF40-7B4A70E3AE09</key>
+		<dict>
+			<key>xpos</key>
+			<integer>410</integer>
+			<key>ypos</key>
+			<integer>1810</integer>
 		</dict>
 		<key>C60A62FF-9B59-4C3C-99F3-807373F2125E</key>
 		<dict>
@@ -2940,6 +3250,24 @@ end alfred_script</string>
 			<key>ypos</key>
 			<integer>760</integer>
 		</dict>
+		<key>F2D4CBD3-8C5E-42EE-903C-DDD8ADA6F33B</key>
+		<dict>
+			<key>colorindex</key>
+			<integer>3</integer>
+			<key>xpos</key>
+			<integer>10</integer>
+			<key>ypos</key>
+			<integer>2260</integer>
+		</dict>
+		<key>F6F03505-7E5B-44D3-9A34-845ABDC79BA1</key>
+		<dict>
+			<key>colorindex</key>
+			<integer>3</integer>
+			<key>xpos</key>
+			<integer>10</integer>
+			<key>ypos</key>
+			<integer>1960</integer>
+		</dict>
 		<key>FA40A7DB-25B4-464C-B269-EC046612AD60</key>
 		<dict>
 			<key>note</key>
@@ -2985,7 +3313,7 @@ end alfred_script</string>
 	<key>variablesdontexport</key>
 	<array/>
 	<key>version</key>
-	<string>1.4.0</string>
+	<string>1.5.0</string>
 	<key>webaddress</key>
 	<string>https://github.com/pryley/alfred-the-archive</string>
 </dict>
