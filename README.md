@@ -13,7 +13,7 @@ This is an comprehensive workflow for The Archive that helps you work with your 
 - [Templates](#templates)
 - [Importing URLs](#importing-urls)
 - [Importing Images](#importing-images)
-- [Change Heading Levels](#change-heading-levels)
+- [Text Manipulation](#text-manipulation)
 - [Configuration](#configuration)
 - [Documentation](#documentation)
 - [Changelog](#changelog)
@@ -178,9 +178,9 @@ To use the File Action:
 3. Type `add` and select the "Add image to The Archive" file action.
 4. Paste the generated markdown link of the image into your note. 
 
-## Change Heading Levels
+## Text Manipulation
 
-The workflow provides hotkeys that allow you easily change the heading level of a line in your note. A hotkey is simply a combination of keys that you press together in order to perform an action. These hotkeys are specific to The Archive and will only work if The Archive is the front most application and in focus.
+The workflow provides several hotkeys which allow you to perform basic text manipulation such as changing the heading levels of a line in your note, or marking multiple lines of text as a fenced code block using backticks. A hotkey is simply a combination of keys that you press together in order to perform an action. These hotkeys are specific to The Archive and will only work if The Archive is the front most application and in focus.
 
 To use these hotkeys, click on the line in your note that you wish to change and then press the hotkey.
 
@@ -194,6 +194,7 @@ To use these hotkeys, click on the line in your note that you wish to change and
 - **⌘ + 4**: Pressing this hotkey will change the line to a Heading 4
 - **⌘ + 5**: Pressing this hotkey will change the line to a Heading 5
 - **⌘ + 6**: Pressing this hotkey will change the line to a Heading 6
+- **⌘ + `**: Pressing this hotkey will wrap the selected lines of text in backticks as a fenced code block
 
 ## Configuration
 

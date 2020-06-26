@@ -24,7 +24,7 @@ for file in sorted_file_list:
         type="file",
     )
     items.addMod(
-        arg="{0}>{1}".format(file['path'], query),
+        arg="{0}|>{1}".format(file['path'], query),
         icon_path="icons/action.png",
         icon_type="image",
         key="cmd",

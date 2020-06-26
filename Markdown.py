@@ -72,7 +72,7 @@ class Markdown(object):
         return self.url.decode('utf-8')
 
     def parseFilename(self, filename):
-        to_replace = ['/', '\\', ':', '|']
+        to_replace = ['/', '\\', ':']
         tmp = filename.decode('utf-8').strip()
         for i in to_replace:
             tmp = tmp.replace(i, '-')

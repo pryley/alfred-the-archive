@@ -20,24 +20,24 @@ if notes.useZettelId():
     zettel_action = u"\u2318 Remove Zettel ID"
 
 items.setItem(
-    arg=u"{0}||".format(query),
+    arg=u"{0}|>|>".format(query),
     subtitle=u"\"{0}\" ({1}, {2})".format(query, zettel_action, paste_action),
     title="Create note",
 )
 items.addMod(
-    arg=u"{0}||".format(query_alt),
+    arg=u"{0}|>|>".format(query_alt),
     key="cmd",
     subtitle=u"\"{0}\" ({1})".format(query_alt, paste_action),
 )
 items.addMod(
-    arg=u"{0}||paste".format(query),
+    arg=u"{0}|>|>paste".format(query),
     icon_path="icons/new_from_clipboard.png",
     icon_type="image",
     key="alt",
     subtitle=u"\"{0}\" ({1})".format(query, zettel_action),
 )
 items.addMod(
-    arg=u"{0}||paste".format(query_alt),
+    arg=u"{0}|>|>paste".format(query_alt),
     icon_path="icons/new_from_clipboard.png",
     icon_type="image",
     key="cmd+alt",
@@ -51,26 +51,26 @@ templates_list = search.templates()
 if len(templates_list) > 0:
     for file in templates_list:
         items.setItem(
-            arg=u"{0}|{1}|".format(query, file['path']),
+            arg=u"{0}|>{1}|>".format(query, file['path']),
             subtitle=u"\"{0}\" ({1}, {2}. {3})".format(query, zettel_action, paste_action, quicklook_action),
             title=u"Create note from template: {0}".format(file['filename']),
             type='file',
             quicklookurl=file['path'],
         )
         items.addMod(
-            arg=u"{0}|{1}|".format(query_alt, file['path']),
+            arg=u"{0}|>{1}|>".format(query_alt, file['path']),
             key="cmd",
             subtitle=u"\"{0}\" ({1})".format(query_alt, paste_action),
         )
         items.addMod(
-            arg=u"{0}|{1}|paste".format(query, file['path']),
+            arg=u"{0}|>{1}|>paste".format(query, file['path']),
             icon_path="icons/paste.png",
             icon_type="image",
             key="alt",
             subtitle=u"\"{0}\" ({1})".format(query, zettel_action),
         )
         items.addMod(
-            arg=u"{0}|{1}|paste".format(query_alt, file['path']),
+            arg=u"{0}|>{1}|>paste".format(query_alt, file['path']),
             icon_path="icons/paste.png",
             icon_type="image",
             key="cmd+alt",

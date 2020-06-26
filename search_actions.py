@@ -16,31 +16,31 @@ back_query = "<EMPTY>" if not query else query
 
 actions = [
     {
-        "arg": "back|{0}".format(query),
+        "arg": "back|>{0}".format(query),
         "icon": "icons/back.png",
         "subtitle": "Back to Search with query: {0}".format(back_query),
         "title": "Back",
     },
     {
-        "arg": u"markdown_link|[{0}]({1})".format(note_title, filename),
+        "arg": u"markdown_link|>[{0}]({1})".format(note_title, filename),
         "icon": "icons/link.png",
         "subtitle": u"Copy a Markdown Link for \"{0}\" to the Clipboard".format(note_title),
         "title": "Markdown Link",
     },
     {
-        "arg": u"wiki_link|[[{0}]]".format(note_title),
+        "arg": u"wiki_link|>[[{0}]]".format(note_title),
         "icon": "icons/link.png",
         "subtitle": u"Copy a Wiki Link for \"{0}\" to the Clipboard".format(note_title),
         "title": "Wiki Link",
     },
     {
-        "arg": "editor|{0}".format(note_path),
+        "arg": "editor|>{0}".format(note_path),
         "icon": "icons/editor.png",
         "subtitle": "Open \"{0}\" with the default editor".format(os.path.basename(note_path)),
         "title": "External Editor",
     },
     {
-        "arg": "delete|{0}>{1}".format(note_path, query),
+        "arg": "delete|>{0}".format(note_path),
         "icon": "icons/delete.png",
         "subtitle": u"Delete \"{0}\"".format(os.path.basename(note_path)),
         "title": "Delete Note",

@@ -70,6 +70,19 @@
 				<false/>
 			</dict>
 		</array>
+		<key>13D7AF95-E68C-4207-AD54-532455FFBC15</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>C36841B1-1B96-411D-BF40-7B4A70E3AE09</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
 		<key>1AD1E2CF-FCB9-45E5-B8F2-9C6B0CEAABD6</key>
 		<array>
 			<dict>
@@ -1573,7 +1586,7 @@
 			<key>config</key>
 			<dict>
 				<key>delimiter</key>
-				<string>|</string>
+				<string>|&gt;</string>
 				<key>trimarguments</key>
 				<true/>
 				<key>variableprefix</key>
@@ -2348,7 +2361,7 @@ end alfred_script</string>
 			<key>config</key>
 			<dict>
 				<key>delimiter</key>
-				<string>|</string>
+				<string>|&gt;</string>
 				<key>trimarguments</key>
 				<true/>
 				<key>variableprefix</key>
@@ -2380,7 +2393,7 @@ end alfred_script</string>
 			<key>config</key>
 			<dict>
 				<key>delimiter</key>
-				<string>&gt;</string>
+				<string>|&gt;</string>
 				<key>trimarguments</key>
 				<true/>
 				<key>variableprefix</key>
@@ -2412,7 +2425,7 @@ end alfred_script</string>
 			<key>config</key>
 			<dict>
 				<key>argument</key>
-				<string>{var:path_query1}</string>
+				<string>{var:action2}</string>
 				<key>variables</key>
 				<dict/>
 			</dict>
@@ -2483,7 +2496,9 @@ end alfred_script</string>
 			<key>config</key>
 			<dict>
 				<key>applescript</key>
-				<string>use AppleScript version "2.4"use framework "AppKit"use framework "Foundation"use scripting additionson alfred_script(level)	set oldClip to my fetchStorableClipboard()	set thePasteboard to current application's NSPasteboard's generalPasteboard()	set theCount to thePasteboard's changeCount()	tell application "System Events" to keystroke "c" using {command down}	repeat 20 times		if thePasteboard's changeCount() is not theCount then exit repeat		delay 0.1	end repeat	set regex to "^([#]+)?(\\s+)?(.*)"	set input to (the clipboard)	set heading to regex_match from the input against regex given replacement:"$3"	set the clipboard to level &amp; " " &amp; heading	tell application "System Events" to keystroke "v" using {command down}	delay 0.2	my putOnClipboard:oldClipend alfred_scripton fetchStorableClipboard()
+				<string>use AppleScript version "2.4"use framework "AppKit"use framework "Foundation"use scripting additionson alfred_script(q)	set oldClip to my fetchStorableClipboard()	set thePasteboard to current application's NSPasteboard's generalPasteboard()	set theCount to thePasteboard's changeCount()	tell application "System Events" to keystroke "c" using {command down}	repeat 20 times		if thePasteboard's changeCount() is not theCount then exit repeat		delay 0.1	end repeat
+	set input to (the clipboard)
+	if ((q as string) is equal to "```") then		set trimmedText to trimText(trimParagraphs(input, q), return)		set newText to q &amp; return &amp; trimmedText &amp; return &amp; q &amp; return	else		set regex to "^([#]+)?(\\s+)?(.*)"		set heading to regex_match from the input against regex given replacement:" $3"		set newText to q &amp; trimText(heading, return) &amp; return	end if	set the clipboard to newText	tell application "System Events" to keystroke "v" using {command down}	delay 0.2	my putOnClipboard:oldClipend alfred_scripton fetchStorableClipboard()
     set aMutableArray to current application's NSMutableArray's array()
     set thePasteboard to current application's NSPasteboard's generalPasteboard()
     repeat with anItem in thePasteboard's pasteboardItems()
@@ -2504,7 +2519,9 @@ on putOnClipboard:theArray
     set thePasteboard to current application's NSPasteboard's generalPasteboard()
     thePasteboard's clearContents()
     thePasteboard's writeObjects:theArray
-end putOnClipboard:on regex_match against pattern from str given replacement:fmt	set regex to current application's NSRegularExpression's regularExpressionWithPattern:pattern options:(current application's NSRegularExpressionCaseInsensitive) |error|:(missing value)	(regex's stringByReplacingMatchesInString:str options:0 range:{0, length of str} withTemplate:fmt) as textend regex_match</string>
+end putOnClipboard:on regex_match against pattern from str given replacement:fmt	set regex to current application's NSRegularExpression's regularExpressionWithPattern:pattern options:(current application's NSRegularExpressionCaseInsensitive) |error|:(missing value)	(regex's stringByReplacingMatchesInString:str options:0 range:{0, length of str} withTemplate:fmt) as textend regex_match
+
+on trimParagraphs(theText, theCharactersToTrim)	set theParagraphs to every paragraph of theText	repeat with a from 1 to count of paragraphs of theText		set theCurrentParagraph to item a of theParagraphs		set item a of theParagraphs to trimText(theCurrentParagraph, theCharactersToTrim)	end repeat	set AppleScript's text item delimiters to return	set theText to theParagraphs as string	set AppleScript's text item delimiters to ""	return theTextend trimParagraphson trimText(theText, theCharactersToTrim)	set theTrimLength to length of theCharactersToTrim	repeat while theText begins with theCharactersToTrim		try			set theText to characters (theTrimLength + 1) thru -1 of theText as string		on error			return ""		end try	end repeat	repeat while theText ends with theCharactersToTrim		try			set theText to characters 1 thru -(theTrimLength + 1) of theText as string		on error			return ""		end try	end repeat	return theTextend trimText</string>
 				<key>cachescript</key>
 				<true/>
 			</dict>
@@ -2699,6 +2716,43 @@ end putOnClipboard:on regex_match against pattern from str given replacement:f
 			<key>version</key>
 			<integer>2</integer>
 		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>action</key>
+				<integer>0</integer>
+				<key>argument</key>
+				<integer>3</integer>
+				<key>argumenttext</key>
+				<string>```</string>
+				<key>focusedappvariable</key>
+				<false/>
+				<key>focusedappvariablename</key>
+				<string></string>
+				<key>hotkey</key>
+				<integer>50</integer>
+				<key>hotmod</key>
+				<integer>1048576</integer>
+				<key>hotstring</key>
+				<string>`</string>
+				<key>leftcursor</key>
+				<false/>
+				<key>modsmode</key>
+				<integer>0</integer>
+				<key>relatedApps</key>
+				<array>
+					<string>de.zettelkasten.TheArchive</string>
+				</array>
+				<key>relatedAppsMode</key>
+				<integer>1</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.trigger.hotkey</string>
+			<key>uid</key>
+			<string>13D7AF95-E68C-4207-AD54-532455FFBC15</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
 	</array>
 	<key>readme</key>
 	<string>https://pryley.github.io/alfred-the-archive/</string>
@@ -2737,6 +2791,15 @@ end putOnClipboard:on regex_match against pattern from str given replacement:f
 			<integer>10</integer>
 			<key>ypos</key>
 			<integer>610</integer>
+		</dict>
+		<key>13D7AF95-E68C-4207-AD54-532455FFBC15</key>
+		<dict>
+			<key>colorindex</key>
+			<integer>3</integer>
+			<key>xpos</key>
+			<integer>10</integer>
+			<key>ypos</key>
+			<integer>2555</integer>
 		</dict>
 		<key>1AD1E2CF-FCB9-45E5-B8F2-9C6B0CEAABD6</key>
 		<dict>
@@ -3313,7 +3376,7 @@ end putOnClipboard:on regex_match against pattern from str given replacement:f
 	<key>variablesdontexport</key>
 	<array/>
 	<key>version</key>
-	<string>1.5.0</string>
+	<string>1.6.0</string>
 	<key>webaddress</key>
 	<string>https://github.com/pryley/alfred-the-archive</string>
 </dict>
