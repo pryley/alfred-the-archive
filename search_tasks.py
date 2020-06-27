@@ -3,7 +3,6 @@
 
 from Alfred import Items, Tools
 from Notes import Search
-import urllib
 
 items = Items()
 query = Tools.getArgv(1)

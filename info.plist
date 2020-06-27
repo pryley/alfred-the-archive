@@ -3376,7 +3376,7 @@ on trimParagraphs(theText, theCharactersToTrim)	set theParagraphs to every para
 	<key>variablesdontexport</key>
 	<array/>
 	<key>version</key>
-	<string>1.6.0</string>
+	<string>1.6.1</string>
 	<key>webaddress</key>
 	<string>https://github.com/pryley/alfred-the-archive</string>
 </dict>

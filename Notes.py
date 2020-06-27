@@ -4,11 +4,9 @@
 from Alfred import Tools
 from collections import Counter, OrderedDict
 from unicodedata import normalize
-import html
 import os
 import re
 import sys
-import urllib2
 
 class Notes(object):
 

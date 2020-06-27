@@ -2,7 +2,7 @@
 # encoding: utf-8
 
 from Alfred import Items, Tools
-from collections import Counter, OrderedDict
+from collections import OrderedDict
 from Plist import Plist
 import os
 

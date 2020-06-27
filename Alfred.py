@@ -163,7 +163,7 @@ class Tools(object):
     @staticmethod
     def normalize(value):
         if str(value).lower() in ("yes", "y", "tru", "true", "1"): return "True"
-        if str(value).lower() in ("no",  "n", "fals", "false", "0"): return "False"
+        if str(value).lower() in ("no",  "n", "fal", "fals", "false", "0"): return "False"
         return value
 
     @staticmethod
