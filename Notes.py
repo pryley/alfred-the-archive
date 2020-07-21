@@ -210,8 +210,7 @@ class Search(Notes):
 
     def getNoteFilename(self, file_path):
         file_basename = os.path.basename(file_path)
-        filename_without_extension = file_basename.split('.')[0]
-        return filename_without_extension
+        return file_basename.rsplit('.', 1)[0]
 
     def getNoteTitle(self, path):
         content = self._getFileContent(path)
