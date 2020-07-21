@@ -1412,6 +1412,8 @@
 			<dict>
 				<key>argument</key>
 				<string></string>
+				<key>passthroughargument</key>
+				<false/>
 				<key>variables</key>
 				<dict>
 					<key>action_key_value</key>
@@ -1565,6 +1567,8 @@
 			<dict>
 				<key>argument</key>
 				<string>{var:split1}</string>
+				<key>passthroughargument</key>
+				<false/>
 				<key>variables</key>
 				<dict>
 					<key>clipboard</key>
@@ -2120,6 +2124,8 @@
 			<dict>
 				<key>argument</key>
 				<string>{var:action2}</string>
+				<key>passthroughargument</key>
+				<false/>
 				<key>variables</key>
 				<dict/>
 			</dict>
@@ -2347,6 +2353,8 @@ end alfred_script</string>
 			<dict>
 				<key>argument</key>
 				<string>{var:action2}</string>
+				<key>passthroughargument</key>
+				<false/>
 				<key>variables</key>
 				<dict/>
 			</dict>
@@ -2379,6 +2387,8 @@ end alfred_script</string>
 			<dict>
 				<key>argument</key>
 				<string></string>
+				<key>passthroughargument</key>
+				<false/>
 				<key>variables</key>
 				<dict/>
 			</dict>
@@ -2411,6 +2421,8 @@ end alfred_script</string>
 			<dict>
 				<key>argument</key>
 				<string>{var:action2}</string>
+				<key>passthroughargument</key>
+				<false/>
 				<key>variables</key>
 				<dict/>
 			</dict>
@@ -2426,6 +2438,8 @@ end alfred_script</string>
 			<dict>
 				<key>argument</key>
 				<string>{var:action2}</string>
+				<key>passthroughargument</key>
+				<false/>
 				<key>variables</key>
 				<dict/>
 			</dict>
@@ -2496,9 +2510,36 @@ end alfred_script</string>
 			<key>config</key>
 			<dict>
 				<key>applescript</key>
-				<string>use AppleScript version "2.4"use framework "AppKit"use framework "Foundation"use scripting additionson alfred_script(q)	set oldClip to my fetchStorableClipboard()	set thePasteboard to current application's NSPasteboard's generalPasteboard()	set theCount to thePasteboard's changeCount()	tell application "System Events" to keystroke "c" using {command down}	repeat 20 times		if thePasteboard's changeCount() is not theCount then exit repeat		delay 0.1	end repeat
+				<string>use AppleScript version "2.4"
+use framework "AppKit"
+use framework "Foundation"
+use scripting additions
+
+on alfred_script(q)
+	set oldClip to my fetchStorableClipboard()
+	set thePasteboard to current application's NSPasteboard's generalPasteboard()
+	set theCount to thePasteboard's changeCount()
+	tell application "System Events" to keystroke "c" using {command down}
+	repeat 20 times
+		if thePasteboard's changeCount() is not theCount then exit repeat
+		delay 0.1
+	end repeat
 	set input to (the clipboard)
-	if ((q as string) is equal to "```") then		set trimmedText to trimText(trimParagraphs(input, q), return)		set newText to q &amp; return &amp; trimmedText &amp; return &amp; q &amp; return	else		set regex to "^([#]+)?(\\s+)?(.*)"		set heading to regex_match from the input against regex given replacement:" $3"		set newText to q &amp; trimText(heading, return) &amp; return	end if	set the clipboard to newText	tell application "System Events" to keystroke "v" using {command down}	delay 0.2	my putOnClipboard:oldClipend alfred_scripton fetchStorableClipboard()
+	if ((q as string) is equal to "```") then
+		set trimmedText to trimText(trimParagraphs(input, q), return)
+		set newText to q &amp; return &amp; trimmedText &amp; return &amp; q &amp; return
+	else
+		set regex to "^([#]+)?(\\s+)?(.*)"
+		set heading to regex_match from the input against regex given replacement:" $3"
+		set newText to q &amp; trimText(heading, return) &amp; return
+	end if
+	set the clipboard to newText
+	tell application "System Events" to keystroke "v" using {command down}
+	delay 0.2
+	my putOnClipboard:oldClip
+end alfred_script
+
+on fetchStorableClipboard()
     set aMutableArray to current application's NSMutableArray's array()
     set thePasteboard to current application's NSPasteboard's generalPasteboard()
     repeat with anItem in thePasteboard's pasteboardItems()
@@ -2519,9 +2560,43 @@ on putOnClipboard:theArray
     set thePasteboard to current application's NSPasteboard's generalPasteboard()
     thePasteboard's clearContents()
     thePasteboard's writeObjects:theArray
-end putOnClipboard:on regex_match against pattern from str given replacement:fmt	set regex to current application's NSRegularExpression's regularExpressionWithPattern:pattern options:(current application's NSRegularExpressionCaseInsensitive) |error|:(missing value)	(regex's stringByReplacingMatchesInString:str options:0 range:{0, length of str} withTemplate:fmt) as textend regex_match
+end putOnClipboard:
 
-on trimParagraphs(theText, theCharactersToTrim)	set theParagraphs to every paragraph of theText	repeat with a from 1 to count of paragraphs of theText		set theCurrentParagraph to item a of theParagraphs		set item a of theParagraphs to trimText(theCurrentParagraph, theCharactersToTrim)	end repeat	set AppleScript's text item delimiters to return	set theText to theParagraphs as string	set AppleScript's text item delimiters to ""	return theTextend trimParagraphson trimText(theText, theCharactersToTrim)	set theTrimLength to length of theCharactersToTrim	repeat while theText begins with theCharactersToTrim		try			set theText to characters (theTrimLength + 1) thru -1 of theText as string		on error			return ""		end try	end repeat	repeat while theText ends with theCharactersToTrim		try			set theText to characters 1 thru -(theTrimLength + 1) of theText as string		on error			return ""		end try	end repeat	return theTextend trimText</string>
+on regex_match against pattern from str given replacement:fmt
+	set regex to current application's NSRegularExpression's regularExpressionWithPattern:pattern options:(current application's NSRegularExpressionCaseInsensitive) |error|:(missing value)
+	(regex's stringByReplacingMatchesInString:str options:0 range:{0, length of str} withTemplate:fmt) as text
+end regex_match
+
+on trimParagraphs(theText, theCharactersToTrim)
+	set theParagraphs to every paragraph of theText
+	repeat with a from 1 to count of paragraphs of theText
+		set theCurrentParagraph to item a of theParagraphs
+		set item a of theParagraphs to trimText(theCurrentParagraph, theCharactersToTrim)
+	end repeat
+	set AppleScript's text item delimiters to return
+	set theText to theParagraphs as string
+	set AppleScript's text item delimiters to ""
+	return theText
+end trimParagraphs
+
+on trimText(theText, theCharactersToTrim)
+	set theTrimLength to length of theCharactersToTrim
+	repeat while theText begins with theCharactersToTrim
+		try
+			set theText to characters (theTrimLength + 1) thru -1 of theText as string
+		on error
+			return ""
+		end try
+	end repeat
+	repeat while theText ends with theCharactersToTrim
+		try
+			set theText to characters 1 thru -(theTrimLength + 1) of theText as string
+		on error
+			return ""
+		end try
+	end repeat
+	return theText
+end trimText</string>
 				<key>cachescript</key>
 				<true/>
 			</dict>
@@ -2558,6 +2633,8 @@ on trimParagraphs(theText, theCharactersToTrim)	set theParagraphs to every para
 			<dict>
 				<key>argument</key>
 				<string>{var:action2}</string>
+				<key>passthroughargument</key>
+				<false/>
 				<key>variables</key>
 				<dict/>
 			</dict>
@@ -3360,6 +3437,8 @@ on trimParagraphs(theText, theCharactersToTrim)	set theParagraphs to every para
 		<string>False</string>
 		<key>prefer_filename_to_title</key>
 		<string>True</string>
+		<key>prefer_zettel_id_links</key>
+		<string>False</string>
 		<key>search_content</key>
 		<string>False</string>
 		<key>search_yaml_tags_only</key>
@@ -3376,7 +3455,7 @@ on trimParagraphs(theText, theCharactersToTrim)	set theParagraphs to every para
 	<key>variablesdontexport</key>
 	<array/>
 	<key>version</key>
-	<string>1.6.1</string>
+	<string>1.7.0</string>
 	<key>webaddress</key>
 	<string>https://github.com/pryley/alfred-the-archive</string>
 </dict>

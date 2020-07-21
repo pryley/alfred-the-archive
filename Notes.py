@@ -3,6 +3,7 @@
 
 from Alfred import Tools
 from collections import Counter, OrderedDict
+from QuerySplitter import QuerySplitter
 from unicodedata import normalize
 import os
 import re
@@ -47,6 +48,7 @@ class Notes(object):
         self.exact_match = True if os.getenv('exact_match') == 'True' else False
         self.path = Tools.getNotesPath()
         self.prefer_filename_to_title = True if os.getenv('prefer_filename_to_title') == 'True' else False
+        self.prefer_zettel_id_links = True if os.getenv('prefer_zettel_id_links') == 'True' else False
         self.search_content = True if os.getenv('search_content') == 'True' else False
         self.search_yaml_tags_only = True if os.getenv('search_yaml_tags_only') == 'True' else False
         self.template_tag = os.getenv('template_tag')
@@ -211,6 +213,14 @@ class Search(Notes):
     def getNoteFilename(self, file_path):
         file_basename = os.path.basename(file_path)
         return file_basename.rsplit('.', 1)[0]
+
+    def getNoteLinkTitle(self, path):
+        title = self.getNoteTitle(path)
+        if self.prefer_zettel_id_links:
+            qs = QuerySplitter(title)
+            if qs.zettel_id:
+                title = qs.zettel_id
+        return title
 
     def getNoteTitle(self, path):
         content = self._getFileContent(path)

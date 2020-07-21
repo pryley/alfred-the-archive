@@ -6,7 +6,7 @@ from Notes import Search
 import sys
 
 query = Tools.getArgv(1)
-title = Search().getNoteTitle(query).strip()
+title = Search().getNoteLinkTitle(query).strip()
 output = '[[' + title + ']]'
 
 sys.stdout.write(output)
