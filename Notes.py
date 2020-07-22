@@ -52,7 +52,7 @@ class Notes(object):
         self.search_content = True if os.getenv('search_content') == 'True' else False
         self.search_yaml_tags_only = True if os.getenv('search_yaml_tags_only') == 'True' else False
         self.template_tag = os.getenv('template_tag')
-        self.use_zettel_id = True if Tools.settings('isUsingIDForNewFiles', 0) == 1 else False
+        self.use_zettel_id = Tools.settings('isUsingIDForNewFiles', True)
         self.use_zettel_id_in_title = True if os.getenv('use_zettel_id_in_title') == 'True' else False
 
     @staticmethod
@@ -63,7 +63,7 @@ class Notes(object):
 
     @staticmethod
     def _getDefaultExtension():
-        ext = Tools.settings('fileExtension', 'txt')
+        ext = Tools.settings('fileExtension', 'md')
         return Notes.normalizeExt(ext)
 
     def getAllowedExtensions(self):
