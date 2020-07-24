@@ -23,11 +23,7 @@ This is an comprehensive workflow for The Archive that helps you work with your 
 
 1. Download [the latest release](https://github.com/pryley/alfred-the-archive/releases/latest/download/The.Archive.alfredworkflow)
 2. Double-click the downloaded workflow to install in Alfred.
-3. Install [QLMarkdownGFM](https://github.com/Watson1978/QLMarkdownGFM) with [Homebrew](https://brew.sh/) (optional, this allows you to Quickview markdown files)
-    ```bash
-    brew cask install https://raw.githubusercontent.com/Watson1978/QLMarkdownGFM/master/qlmarkdown-gfm.rb
-    xattr -d -r com.apple.quarantine ~/Library/QuickLook/
-    ```
+3. Install [Glance](https://apps.apple.com/us/app/glance-quick-look-plugin/id1513574319) from the App Store (optional, this allows you to Quickview markdown files)
 4. Install [pandoc](https://pandoc.org/) with [Homebrew](https://brew.sh/) (optional, this allows you to import a webpage into a note)
     ```bash
     brew install pandoc
@@ -47,7 +43,7 @@ There are three modifier keys that you can use with the search results:
 
 1. **⇧ Shift:** Pressing this key will use Quicklook to preview the selected note.
 
-   > **Note:** To view markdown files with Quicklook, you may need to [install a Quicklook extension](#installation).
+   > **Note:** To view markdown files with Quicklook, you may need to [install Glance](#installation).
 
 2. **⌥ Option:** Holding this key down as you press Enter will paste a wiki link of the selected note into the frontmost application (i.e. `[[title of the selected note]]`).
 
@@ -150,7 +146,7 @@ There are three modifier keys (and one modifier key combo) that you can use with
 
 1. **⇧ Shift:** Pressing this key will use Quicklook to preview the selected template.
 
-   > **Note:** To view markdown files with Quicklook, you may need to [install a Quicklook extension](#installation).
+   > **Note:** To view markdown files with Quicklook, you may need to [install Glance](#installation).
 
 2. **⌥ Option:** Holding this key down as you press Enter will paste the current clipboard contents into the template's `{content}` placeholder.
 
@@ -202,7 +198,7 @@ To change the configuration of the workflow, type `arconfig` in Alfred. You can 
 
 ![](screenshots/arconfig.png)
 
-> **Note:** To view markdown files with Quicklook, you may need to [install a Quicklook extension](#installation). You can do this with [Homebrew](https://brew.sh/).
+> **Note:** To view markdown files with Quicklook, you may need to [install Glance](#installation).
 
 ### Default Date Format (`default_date_format`)
 
