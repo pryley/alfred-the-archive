@@ -26,7 +26,14 @@ class Notes(object):
         ']': ' ',
         '(': '',
         ')': ' ',
-        '\n': ' '
+        '\n': ' ',
+        '*': ' ',
+        ',': ' ',
+        '.': ' ',
+        '-': ' ',
+        ':': ' ',
+        '?': ' ',
+        '!': ' '
     }
 
     UMLAUT_REPL_MAP = {
@@ -149,7 +156,7 @@ class Search(Notes):
         content = Tools.strReplace(content, self.REPL_MAP)
         word_list = content.split(' ')
         word_list = [Tools.chop(w, '#') for w in word_list]
-        search_terms = [s.lower() for s in search_terms]
+        search_terms = [s.lower().encode('unicode_escape') for s in search_terms]
         match = False
         matches = list()
         for st in search_terms:
@@ -168,8 +175,7 @@ class Search(Notes):
                 match = True if len(match_list) > 0 else False
             # search if exact match is true
             elif self.exact_match:
-                match_list = [x for x in word_list if search_str == x]
-                match = True if len(match_list) > 0 else False
+                match = True if search_str in word_list else False
             # search with exact match is false
             else:
                 match = True if search_str in str(word_list) else False

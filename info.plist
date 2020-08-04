@@ -3452,10 +3452,8 @@ end trimText</string>
 		<key>use_zettel_id_in_title</key>
 		<string>False</string>
 	</dict>
-	<key>variablesdontexport</key>
-	<array/>
 	<key>version</key>
-	<string>1.7.2</string>
+	<string>1.7.3</string>
 	<key>webaddress</key>
 	<string>https://github.com/pryley/alfred-the-archive</string>
 </dict>
