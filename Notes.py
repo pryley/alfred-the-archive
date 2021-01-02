@@ -144,7 +144,7 @@ class Search(Notes):
         super(Search, self).__init__()
 
     def _getFileContent(self, file_path):
-        if str(file_path).endswith(self.allowed_extensions):
+        if file_path.encode('utf-8').endswith(self.allowed_extensions):
             with open(file_path, 'r') as c:
                 content = c.read()
         else:
