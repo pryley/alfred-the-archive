@@ -3457,7 +3457,7 @@ end trimText</string>
 		<string>False</string>
 	</dict>
 	<key>version</key>
-	<string>1.7.4</string>
+	<string>2.0.0-beta1</string>
 	<key>webaddress</key>
 	<string>https://github.com/pryley/alfred-the-archive</string>
 </dict>
