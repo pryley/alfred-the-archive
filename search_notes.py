@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 # encoding: utf-8
 
 from Alfred import Items, Tools
@@ -19,7 +19,7 @@ for file in sorted_file_list:
     m_date = Tools.getDateStr(file['mtime'])
     items.setItem(
         arg=file['path'],
-        subtitle=u"Created: {0}, Modified: {1} (\u2318 Actions, \u2325 Paste Wiki Link, \u21E7 Quicklook)".format(c_date, m_date),
+        subtitle="Created: {0}, Modified: {1} (\u2318 Actions, \u2325 Paste Wiki Link, \u21E7 Quicklook)".format(c_date, m_date),
         title=file['title'],
         type="file",
     )
@@ -42,7 +42,7 @@ for file in sorted_file_list:
 if len(items.getItems(response_type="dict")['items']) == 0:
     items.setItem(
         arg=query,
-        subtitle=u"Create note with title \"{0}\"?".format(query),
+        subtitle="Create note with title \"{0}\"?".format(query),
         title="Nothing found...",
     )
     items.setIcon('icons/new.png', 'image')

@@ -1,9 +1,9 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 # encoding: utf-8
 
 from Alfred import Items, Tools
 from Notes import Search
-from urllib import pathname2url
+from urllib.request import pathname2url
 import os
 
 items = Items()
@@ -23,15 +23,15 @@ actions = [
         "title": "Back",
     },
     {
-        "arg": u"markdown_link|>[{0}]({1})".format(note_link_title, filename),
+        "arg": "markdown_link|>[{0}]({1})".format(note_link_title, filename),
         "icon": "icons/link.png",
-        "subtitle": u"Copy a Markdown Link for \"{0}\" to the Clipboard".format(note_title),
+        "subtitle": "Copy a Markdown Link for \"{0}\" to the Clipboard".format(note_title),
         "title": "Markdown Link",
     },
     {
-        "arg": u"wiki_link|>[[{0}]]".format(note_link_title),
+        "arg": "wiki_link|>[[{0}]]".format(note_link_title),
         "icon": "icons/link.png",
-        "subtitle": u"Copy a Wiki Link for \"{0}\" to the Clipboard".format(note_title),
+        "subtitle": "Copy a Wiki Link for \"{0}\" to the Clipboard".format(note_title),
         "title": "Wiki Link",
     },
     {
@@ -43,7 +43,7 @@ actions = [
     {
         "arg": "delete|>{0}".format(note_path),
         "icon": "icons/delete.png",
-        "subtitle": u"Delete \"{0}\"".format(os.path.basename(note_path)),
+        "subtitle": "Delete \"{0}\"".format(os.path.basename(note_path)),
         "title": "Delete Note",
     },
 ]

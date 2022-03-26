@@ -1,9 +1,9 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 # encoding: utf-8
 
 from Alfred import Tools
 from Notes import Search
-from urllib import pathname2url
+from urllib.request import pathname2url
 import os
 import sys
 

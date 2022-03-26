@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 # encoding: utf-8
 
 from Alfred import Tools
@@ -6,7 +6,7 @@ from shutil import copy2
 import os
 import re
 import sys
-import urllib
+import urllib.request, urllib.parse, urllib.error
 
 def copyFile(source, target_dir):
     file_name = str()
@@ -31,7 +31,7 @@ def getMediaFolder():
 source_file = Tools.getArgv(1)
 target_dir = getMediaFolder()
 image_file = copyFile(source_file, target_dir)
-file_url = urllib.pathname2url(image_file)
+file_url = urllib.request.pathname2url(image_file)
 link = '![{0}]({1})'.format(os.path.basename(image_file), file_url)
 
 sys.stdout.write(link)

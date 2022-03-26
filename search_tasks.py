@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 # encoding: utf-8
 
 from Alfred import Items, Tools
@@ -15,7 +15,7 @@ if len(tasks) > 0:
         file_title = file['title'] if file['title'] != str() else search.getNoteFilename(file['path'])
         items.setItem(
             arg=file['path'],
-            subtitle=u'\u2192 {0} (\u2318 Open in The Archive, \u2325 Open in Default Editor)'.format(file['filename'].decode('utf-8')),
+            subtitle="\u2192 {0} (\u2318 Open in The Archive, \u2325 Open in Default Editor)".format(file['filename']),
             title=file['todo'],
             type='file',
             valid=True,
@@ -30,14 +30,14 @@ if len(tasks) > 0:
             icon_path="icons/the-archive.png",
             icon_type="image",
             key="cmd",
-            subtitle=u"Open \"{0}\" in The Archive".format(file['filename']),
+            subtitle="Open \"{0}\" in The Archive".format(file['filename']),
         )
         items.addMod(
             arg=file['path'],
             icon_path="icons/editor.png",
             icon_type="image",
             key="alt",
-            subtitle=u"Open \"{0}\" in the default editor".format(file['filename']),
+            subtitle="Open \"{0}\" in the default editor".format(file['filename']),
         )
         items.setIcon('icons/todo.png' if file['status'] == 'pending' else 'icons/done.png', 'image')
         items.addItem()

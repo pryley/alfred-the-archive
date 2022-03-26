@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 # encoding: utf-8
 
 from Alfred import Items, Tools
@@ -12,9 +12,9 @@ def get_selection(key, query):
         v = variables[key]
         isValid = False if query == str() else True
         items.setItem(
-            arg = u"set|>{0}|>{1}".format(key, query),
-            quicklookurl = u"{0}/docs/{1}.md".format(workflow_dir, key),
-            subtitle = u"Add new value and press enter (\u2318 Delete value, \u21E7 for Help)",
+            arg = "set|>{0}|>{1}".format(key, query),
+            quicklookurl = "{0}/docs/{1}.md".format(workflow_dir, key),
+            subtitle = "Add new value and press enter (\u2318 Delete value, \u21E7 for Help)",
             title = "Change {0}: {1}".format(key, v),
             valid = isValid,
         )
@@ -38,13 +38,13 @@ def get_variables():
 
 def print_config(query):
     variables = get_variables()
-    for variable, value in variables.items():
+    for variable, value in list(variables.items()):
         if query == str() or query in variable:
             v_subtitle = '<EMPTY>' if value == str() else value
             items.setItem(
-                arg = u"selection|>{0}|>{1}".format(variable, value),
-                quicklookurl = u"{0}/docs/{1}.md".format(workflow_dir, variable),
-                subtitle = u"Value: {0} (\u21E7 for Help)".format(v_subtitle),
+                arg = "selection|>{0}|>{1}".format(variable, value),
+                quicklookurl = "{0}/docs/{1}.md".format(workflow_dir, variable),
+                subtitle = "Value: {0} (\u21E7 for Help)".format(v_subtitle),
                 title = variable,
             )
             icon = 'icons/check.png' if value != str() else 'icons/question.png'

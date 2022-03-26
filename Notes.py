@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 # encoding: utf-8
 
 from Alfred import Tools
@@ -134,7 +134,7 @@ class Note(Notes):
         else:
             content = self.FALLBACK_CONTENT
         content = content.replace(self.template_tag, '')
-        for k, v in kwargs.items():
+        for k, v in list(kwargs.items()):
             content = content.replace('{' + k + '}', v)
         return content
 
@@ -144,19 +144,19 @@ class Search(Notes):
         super(Search, self).__init__()
 
     def _getFileContent(self, file_path):
-        if file_path.encode('utf-8').endswith(self.allowed_extensions):
+        if file_path.endswith(self.allowed_extensions):
             with open(file_path, 'r') as c:
                 content = c.read()
         else:
             content = str()
-        return normalize('NFD', content.decode('utf-8'))
+        return normalize('NFD', content)
 
     def _match(self, search_terms, content, operator):
         content = content.lower()
         content = Tools.strReplace(content, self.REPL_MAP)
         word_list = content.split(' ')
         word_list = [Tools.chop(w, '#') for w in word_list]
-        search_terms = [s.lower().encode('unicode_escape') for s in search_terms]
+        search_terms = [s.lower() for s in search_terms]
         match = False
         matches = list()
         for st in search_terms:
@@ -184,7 +184,6 @@ class Search(Notes):
         return match
 
     def getFileMeta(self, path, item):
-        os.stat_float_times(True)
         file_stats = os.stat(path)
         switch = {
             'ctime': file_stats.st_birthtime,
@@ -238,10 +237,10 @@ class Search(Notes):
         return title
 
     def getSearchConfig(self, query):
-        if '&' in query:
+        if '&' in list(query):
             search_terms = query.split('&')
             search_type = 'and'
-        elif '|' in query:
+        elif '|' in list(query):
             search_terms = query.split('|')
             search_type = 'or'
         elif query == str():
@@ -271,7 +270,7 @@ class Search(Notes):
 
     def notes(self, search_terms, search_type):
         file_list = self.getFilesListSorted()
-        search_terms = [normalize('NFD', s.decode('utf-8')) for s in search_terms]
+        search_terms = [normalize('NFD', s) for s in search_terms]
         new_list = list()
         if file_list is not None:
             for file in file_list:
@@ -286,7 +285,7 @@ class Search(Notes):
 
     def tags(self, tag, sort_by='tag', reverse=False):
         i = {'tag': 0, 'count': 1}
-        tag = normalize('NFD', tag.decode('utf-8'))
+        tag = normalize('NFD', tag)
         matches = list()
         sorted_file_list = self.getFilesListSorted()
         regex = re.compile(r"#{1}([\w-]+)\s?", re.I) if tag == '' else re.compile(r'#{1}(' + tag + r'[\w-]*)\s?', re.I | re.UNICODE)
@@ -303,7 +302,7 @@ class Search(Notes):
                     results = re.findall(regex, content)
                     matches.extend(results)
         counted_matches = Counter([v.lower() for v in matches])
-        sorted_matches = OrderedDict(sorted(counted_matches.items(), key=lambda x: x[i[sort_by]], reverse=reverse))
+        sorted_matches = OrderedDict(sorted(list(counted_matches.items()), key=lambda x: x[i[sort_by]], reverse=reverse))
         return sorted_matches
 
     def tasks(self, todo):
