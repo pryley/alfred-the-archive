@@ -48,7 +48,7 @@
 		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>B98A4504-559E-41C1-9AA8-4D54781C00B8</string>
+				<string>E1BE1374-4C3C-483D-B093-3AFB164AA55A</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -926,7 +926,7 @@
 				<key>spaces</key>
 				<string></string>
 				<key>url</key>
-				<string>https://paypal.me/pryley</string>
+				<string>https://ko-fi.com/pryley</string>
 				<key>utf8</key>
 				<true/>
 			</dict>
@@ -982,17 +982,21 @@
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>openwith</key>
+				<key>browser</key>
 				<string></string>
-				<key>sourcefile</key>
-				<string>README.md</string>
+				<key>spaces</key>
+				<string></string>
+				<key>url</key>
+				<string>https://github.com/pryley/alfred-the-archive/blob/master/README.md</string>
+				<key>utf8</key>
+				<true/>
 			</dict>
 			<key>type</key>
-			<string>alfred.workflow.action.openfile</string>
+			<string>alfred.workflow.action.openurl</string>
 			<key>uid</key>
-			<string>B98A4504-559E-41C1-9AA8-4D54781C00B8</string>
+			<string>E1BE1374-4C3C-483D-B093-3AFB164AA55A</string>
 			<key>version</key>
-			<integer>3</integer>
+			<integer>1</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -2836,7 +2840,7 @@ end trimText</string>
 		</dict>
 	</array>
 	<key>readme</key>
-	<string>https://pryley.github.io/alfred-the-archive/</string>
+	<string>This is an comprehensive workflow for The Archive that helps you work with your notes more efficiently.</string>
 	<key>uidata</key>
 	<dict>
 		<key>06634071-A34F-47EA-9A93-224F1E437E99</key>
@@ -3175,15 +3179,6 @@ end trimText</string>
 			<key>ypos</key>
 			<integer>1170</integer>
 		</dict>
-		<key>B98A4504-559E-41C1-9AA8-4D54781C00B8</key>
-		<dict>
-			<key>note</key>
-			<string>Open documentation</string>
-			<key>xpos</key>
-			<integer>2210</integer>
-			<key>ypos</key>
-			<integer>160</integer>
-		</dict>
 		<key>BC34D5F9-85CA-4E33-A951-941FE061EEE8</key>
 		<dict>
 			<key>note</key>
@@ -3353,6 +3348,15 @@ end trimText</string>
 			<key>ypos</key>
 			<integer>610</integer>
 		</dict>
+		<key>E1BE1374-4C3C-483D-B093-3AFB164AA55A</key>
+		<dict>
+			<key>note</key>
+			<string>Open donate URL</string>
+			<key>xpos</key>
+			<integer>2210</integer>
+			<key>ypos</key>
+			<integer>160</integer>
+		</dict>
 		<key>E83305CB-1BAA-457E-93A8-0B9C7689D3C7</key>
 		<dict>
 			<key>colorindex</key>
@@ -3456,8 +3460,10 @@ end trimText</string>
 		<key>use_zettel_id_in_title</key>
 		<string>False</string>
 	</dict>
+	<key>variablesdontexport</key>
+	<array/>
 	<key>version</key>
-	<string>2.0.0-beta1</string>
+	<string>2.0.0</string>
 	<key>webaddress</key>
 	<string>https://github.com/pryley/alfred-the-archive</string>
 </dict>
