@@ -4,7 +4,6 @@
 from Alfred import Tools
 from Markdown import Markdown
 from Notes import Search
-from urllib.request import pathname2url
 import os
 import sys
 
@@ -21,6 +20,5 @@ if file_name == str():
     file_name = Tools.strJoin('WebClip from ', today_time)
 filepath = os.path.join(path, "{0}{1}".format(file_name, ext))
 markdown.writeMarkdown(content, filepath)
-title = pathname2url(search.getNoteTitle(filepath))
 
-sys.stdout.write(title)
+sys.stdout.write(file_name)

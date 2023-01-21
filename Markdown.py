@@ -2,18 +2,21 @@
 # encoding: utf-8
 
 from Alfred import Tools
-import html.parser
+import html
 import os
 import re
-import urllib.request, urllib.error, urllib.parse
+import urllib.request
+import urllib.error
+import urllib.parse
+
 
 class Markdown(object):
 
-    PANDOC = '/usr/local/bin/pandoc -f html-native_divs-native_spans -t gfm --strip-comments --atx-headers '
+    PANDOC = 'pandoc -f html-native_divs-native_spans -t gfm --strip-comments --markdown-headings=atx '
 
     def __init__(self, url):
         self.url = url
-        self.html = self._fetchHtml()
+        self.html = self._fetchHtml().decode('utf-8')
         self.md = self._fetchMd()
 
     def _fetchHtml(self):
@@ -39,7 +42,7 @@ class Markdown(object):
     def _htmlDecode(string):
         string = urllib.parse.unquote(string)
         # return string
-        return html.parser.HTMLParser().unescape(string)
+        return html.unescape(string)
 
     def _markdownHeader(self):
         return "---\n" \
